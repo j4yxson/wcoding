@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>Hello, let's be friends</span>
+
+    <!-- because style is a css property, the width/height unit is not assumed, 
+        meaning that you have to put a unit, in this case "px" -->
+    <div style="width:100px; height:200px; background-color: bisque;">Go away.</div>
+
+    <!-- by using display:block, you have now forced the span to become a block level element -->
+    <span style="display: block;">fruit</span>
+
+    <span style="width:2px; height:1px; background-color: violet;">vegetables</span>
+
+    <!-- by using a div, you can put two spans to have them be on the same line by themselves -->
+    <div>
+        <span style="display: inline-block; width:50px; height:50px; background-color: aqua;">bert</span>
+        <span>ernie</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Pax Form</title>
+</head>
+
+<body>
+    <center>
+        <h1>
+            GoPax Form
+        </h1>
+        <form>
+
+
+            <table width="400">
+                <tr>
+                    <td>
+                        <h3>
+                            Corporate Membership Registration
+                        </h3>
+                        <p>
+                            Email verification is required to register as a
+                            Gopax Corporation.
+                            <br />
+                            Please enter the email you actually use
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email"><strong>Email Address</strong></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input style="height:30px; width:400px" height=200 width=200 id="email" type="email"
+                            placeholder="enter email address" required name="inputemailaddress" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password"><strong>Password</strong></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input style="height:30px; width:400px" id="password" type="password" required
+                            placeholder="enter password" name="inputpassword" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input style="height:30px; width:400px" id="password" type="password" required
+                            placeholder="verify password" name="inputverifiedpassword" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <hr />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="referral"><strong>Referral Invitation Code <span
+                                    style="color: gray">(optional)</span></strong></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input style="height:30px; width:400px" id="referral" type="text" minlength=6 maxlength=7
+                            placeholder="6-7 code" name="inputreferralcode" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+            </table>
+            <table width="400">
+                <tr>
+                    <td>
+                        <input type="checkbox" id="acceptall" name="inputacceptall">
+                        <label for="acceptall"><strong>I agree with all of the following</strong></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="80%">
+                        <label for="terms">GOPAX Terms and Conditions <span
+                                style="color: orange">(required)</span></label>
+                    </td>
+                    <td>
+                        <input id="terms" type="checkbox" required name="inputterms" /> I agree
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="personal">Consent to the collection and use of personal information <span
+                                style="color: orange">(required)</span></label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="personal" required name="inputpersonal" /> I agree
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="age">Minimum Age Requirement is 19 <span
+                                style="color: orange">(required)</span></label>
+                    </td>
+                    <td>
+                        <input id="age" type="checkbox" required name="inputage" /> I agree
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="promo">Consent to promotion notifications <span
+                                style="color: gray">(optional)</span></label>
+                    </td>
+                    <td>
+                        <input id="promo" type="checkbox" name="inputpromo" /> I agree
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Verify Email" style="height:50px; width:400px"
+                            name="verifyemailbutton" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hana Bank</title>
+</head>
+
+<body>
+    <center>
+        <h2>상담센터</h2>
+        <table width="900">
+            <form>
+                <tr>
+                    <td width="20%">
+                        * Customer Classification
+                    </td>
+                    <td>
+                        <input id="indmem" name="membership" type="radio" />
+                        <label for="indmem">Individual Member</label>
+                        <input id="corpmem" name="membership" type="radio" />
+                        <label for="corpmem">Corporate Member</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <label for="name">* Name</label>
+                    </td>
+                    <td>
+                        <input id="name" style="height:30px; width:100px" type="text" placeholder="KIM OO" required
+                            name="Name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <br />
+                        <label for="Birthday">* Birth day</label>
+                    </td>
+                    <td>
+                        <input id="Birthday" style="height:30px; width:100px" type="number" name="birthday" required
+                            placeholder="19800101" />
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <br />
+                        <label for="email">* Email</label>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="email" style="height:30px; width:100px" required type="text" /> @
+                        <select style="height:30px; width:100px" required name="domain names">
+                            <option disabled selected value="">Select</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="hotmail.com">hotmail.com</option>
+                            <option value="daum.com">daum.com</option>
+                            <option value="naver.com">naver.com</option>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <br />
+                        * Contact
+                    <td>
+                        <select style="height:30px; width:100px" name="phone type">
+                            <option selected value="cell phone">Cell</option>
+                            <option value="house">House</option>
+                            <option value="etc">Etc</option>
+                        </select>
+                        <select style="height:30px; width:100px" name="area code>">
+                            <option selected value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                            <option value="019">019</option>
+                        </select> -
+                        <input style="height:30px; width:100px" type="number" max="999">
+                        -
+                        <input style="height:30px; width:100px" type="number" max="9999">
+                        Please enter your contact information
+                    </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <br />
+                        * Consent to collection and use of personal information
+                    </td>
+                    <!-- <td>
+                        <br />
+                        * Consent to collection and use of personal information
+                        <p>
+                            In order to process your consultation, we require your consent to the following in
+                            accordance with Article 15, Paragraph 1 and Article 24, Paragraph 1 of the Personal
+                            Information Protection Act.
+                        <ol>
+                            <li><strong>Purpose of collection and use of personal information:</strong>
+                                <br />
+                                identification of
+                                person to process consultation work according to use of service, confirmation of
+                                intention, and notification of consultation results
+                            </li>
+                            <li><strong>Items of personal information collected</strong>
+                                [name, date of birth, e-mail address, phone number, e-mail inquiry content]
+                            </li>
+                        </ol>
+                        </p>
+                    </td> -->
+                    <td>
+                        <textarea readonly cols="80%" rows="10">
+                            In order to process your consultation, we require your consent to the following in accordance with Article 15, Paragraph 1 and Article 24, Paragraph 1 of the Personal Information Protection Act.
+                            1. Purpose of collection and use of personal information:
+                            identification of person to process consultation work according to use of service, confirmation of intention, and notification of consultation results
+                            2. Items of personal information collected
+                            [name, date of birth, e-mail address, phone number, e-mail inquiry content]
+                            3. Period of retention and use of personal information
+                            The above personal information is retained and used for the above purposes for 5 years from the end of processing after consent to collection and use.
+                            However, after the (financial) transaction end date, it is retained and used only for financial accident investigation, dispute resolution, civil complaint processing, fulfillment of statutory obligations, and the Bank's risk management work.
+                            4. Customers have the right to refuse the collection and use of personal information, and consultation may be refused if the right is exercised.
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <br />
+                    </td>
+                    <td>
+                        Do you agree to the collection and use of personal information?
+                        <input type="radio" id="agree" name="DisAgree" />
+                        <label for="agree">Agree</label>
+                        <input type="radio" id="disagree" name="DisAgree" />
+                        <label for="disagree">Disagree</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <br />
+                        * Question Category
+                    </td>
+                    <td>
+                        <select style="height:30px; width:200px" name="qcategory">
+                            <option selected value="">Choose</option>
+                            <option value="Deposit">Deposit</option>
+                            <option value="Forex">Forex</option>
+                            <option value="Loan">Loan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <br />
+                        * Title
+                    </td>
+                    <td>
+                        <input style="height:30px; width:80%" type="text" placeholder="Title" name="Title">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <br />
+                        * Detail
+                    </td>
+                    <td>
+                        <input style="height:30px; width:80%" type="text" name="Detail" placeholder="Detail">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2 align="center">
+                        <br />
+                        <input style="height:30px; width:70px;background-color: lightgreen;" type="submit"
+                            value="Apply" />
+                        <input style="height:30px; width:70px" type="submit" value="Cancel" />
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </center>
+</body>
+
+</html>
