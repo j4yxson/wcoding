@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonts</title>
+    <style>
+        /* this is from google fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+        /* use font face for downloaded fonts on local or server */
+        @font-face {
+            font-family: inflate;
+            src: url("inflate.ttf");
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="font-family: inflate; font: bold; font-style: italic;">
+        hello
+    </h1>
+    <h2 style="font-weight:900;">
+        hello 2 adsfadfasdfsa
+    </h2>
+    <h3 style="font-family: 'Bungee Spice', sans-serif;">
+        hello 3 asdfasdfasdfasdfasdfasdf
+    </h3>
+
+
+    <!-- vertical align works with inline items only and is referenced around its inline neighbor -->
+    <span style="font-size:36px; background-color: aqua; vertical-align: bottom;">
+        one
+    </span>
+    <span style="font-size:50px; background-color: blueviolet; line-height: 75px;">
+        two
+    </span>
+
+    <h2 style="text-decoration: line-through; text-decoration-style: dotted;">
+        this line of text has decoration
+    </h2>
+</body>
+
+</html>

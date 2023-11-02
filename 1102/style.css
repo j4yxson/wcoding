@@ -1,0 +1,57 @@
+body {
+    background-color: blanchedalmond;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+
+.box {
+    background: pink;
+    width: 300px;
+
+    margin: 50px;
+    border-left: 8px green solid;
+    border: 5px red solid;
+
+    padding-top: 50px;
+    padding-bottom: 10px;
+
+}
+
+.Box {
+    background: skyblue
+}
+
+/*
+
+margin
+- margin: 50px;
+- margin-top: 50px;
+- margin shorthand
+- 1 = all, 2 = t/b l/r, 3 = t l/r b, 4 = trbl
+
+border
+- width, style, color
+- order of border matters
+- shorthand
+- 1 = style, 2 = w s, s c, 3 = w s c
+
+padding
+- padding: 50px;
+- padding-top: 50px;
+- padding shorthand
+
+updated sizing of element after everything's been added
+
+*/
