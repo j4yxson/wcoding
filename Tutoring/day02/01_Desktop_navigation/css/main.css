@@ -1,0 +1,54 @@
+/* Font: */
+/* font-family: 'Nunito', sans-serif; */
+
+/* Colors */
+/* background color: #E9EDF1 */
+/* Header bg color: #DBE1E8 */
+/* Logo and links hover: #0460BC */
+/* Cart bg color: #C3CCD7 */
+/* Cart hover: #B5C0CE */
+
+header {
+    background-color: #DBE1E8;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+body {
+    background-color: #E9EDF1;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    margin: 0;
+    margin: 0;
+    margin: 0;
+
+
+
+}
+
+ul {
+    text-align: center;
+    list-style: none;
+}
+
+ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+h1 {
+    color: #0460BC;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+button {
+    text-align: right;
+}
