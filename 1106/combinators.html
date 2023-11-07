@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinators</title>
+    <style>
+        div div,
+        .two div {
+            width: 150px;
+            height: 150px;
+            display: inline-block;
+            line-height: 150px;
+            border: solid 1px black;
+            text-align: center;
+            border-radius: 5px;
+            margin: 5px
+        }
+
+        .windshield>.wiper {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="one">
+            <div class="green">Apple</div>
+        </div>
+        <div class="two">
+            <div class="green">Pear</div>
+            <div class="yellow">Lemon</div>
+        </div>
+        <div class="one">
+            <div class="yellow">Orange</div>
+        </div>
+    </div>
+
+    <div class="car">
+        Vroom
+        <p class="windshield">
+            Clear
+            <span class="wiper">
+                Squeeze
+            </span>
+        </p>
+    </div>
+</body>
+
+</html>

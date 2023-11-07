@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Styling</title>
+    <style>
+        body {
+            color: navy;
+            font-weight: bold;
+            background-color: blanchedalmond;
+        }
+
+        form {
+            width: 900px;
+            text-align: center;
+        }
+
+        fieldset {
+            width: 50%;
+            margin: auto;
+        }
+
+        /* input[type=radio] {
+            margin-right:2em;
+        } */
+
+        [id^="gender"] {
+            margin-right: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="firstname"> Name: </label><input type="text" id="firstname">
+        <label for="lastname"> Last Name: </label><input type="text" id="lastname">
+        <label for="nickname"> Nickname: </label><input type="checkbox>" id="nickname">
+
+        <label for="suffix">Suffix: </label><select>
+            <option>Jr</option>
+            <option>Sr</option>
+            <option>MD</option>
+            <option>I</option>
+            <option>II</option>
+            <option>III</option>
+        </select>
+
+        <fieldset>
+            <legend>Gender</legend>
+            <label for="genderone">Male</label><input id="genderone" type="radio" name="gender">
+            <label for="gendertwo">Female</label><input id="gendertwo" type="radio" name="gender">
+            <label for="genderthree">GeoMetro</label><input id="genderthree" type="radio" name="gender">
+        </fieldset>
+        <label for="">Yes</label><input id="yes" type="checkbox">
+    </form>
+
+</body>
+
+</html>
