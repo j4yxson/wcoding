@@ -1,0 +1,63 @@
+/* Font used */
+/* font-family: 'Nunito', sans-serif; */
+
+/* Colors */
+/* background color: #CBE1F1 */
+/* Accent color: #5DBC3C */
+
+/* The green status icon should stick to the right 
+   of the white container with appropriate white space. 
+   The avatar photo and name should stick to the left. */
+
+/* The avatar container should be 100% width, 
+   but it shouldn't grow beyond 500px */
+
+body {
+   background-color: #CBE1F1;
+   margin: 0;
+}
+
+.container {
+   border: 1px solid;
+   display: flex;
+   height: 100vh;
+   align-items: center;
+   justify-content: center;
+}
+
+.user_profile {
+   background-color: #fff;
+   width: 100%;
+   max-width: 500px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1em;
+   border-radius: 50px;
+}
+
+.user_img {
+   width: 60px;
+   height: 60px;
+   background-image: url("../assets/avatar.jpg");
+   background-size: 100%;
+   border-radius: 50%;
+}
+
+h2 {
+   font-family: 'Nunito', sans-serif;
+}
+
+.dot {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background-color: green;
+   margin-right: 25px;
+}
+
+.user {
+   display: flex;
+   gap: 20px;
+   align-items: center;
+}

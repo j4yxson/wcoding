@@ -1,0 +1,85 @@
+/* Font used: */
+/* font-family: 'Poppins', sans-serif; */
+
+/* Colors: */
+/* Dark blueish~: #20262C */
+/* Light blueish~: #2F3740 */
+/* Light grayish~ #455260 */
+/* Font: #FFFFFF */
+/* Light font: #B1C4D9 */
+/* Accent color: #BEFF00 */
+
+/* Width of the arrow */
+/* 18px */
+
+body {
+    display: flex;
+    background-color: black;
+    height: 100vh;
+    border: 5px red solid;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: gray;
+    height: 400px;
+    width: 250px;
+    border: 3px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.picture {
+    display: flex;
+    height: 130px;
+    width: 220px;
+    background-image: url("../assets/green-building.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    ;
+}
+
+.left {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding-left: 10px;
+    line-height: 40px;
+}
+
+.econews {
+    color: greenyellow;
+    font-weight: bold;
+    border: 1px solid;
+    background-color: rgb(89, 88, 88);
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    margin-left: 10px;
+
+}
+
+.propertylink {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-left: 10px;
+}
+
+.text {
+    color: #B1C4D9;
+}
+
+.arrow {
+    width: 18px;
+    background-image: url("../assets/arrow-right-long-solid.svg");
+}

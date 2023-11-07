@@ -1,0 +1,54 @@
+/* Font used: */
+/* font-family: 'Playfair Display', sans-serif; */
+
+/* Colors */
+/* Accent color: #07801E */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+span {
+    color: green
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+}
+
+.poke {
+    background-image: url("../assets/food1.jpg");
+    height: 60px;
+    width: 60px;
+    background-size: 100%;
+    border-radius: 10px;
+}
+
+.pizza {
+    background-image: url("../assets/food2.jpg");
+    height: 60px;
+    width: 60px;
+    background-size: 100%;
+    border-radius: 10px;
+}
+
+.salad {
+    background-image: url("../assets/food3.jpg");
+    height: 60px;
+    width: 60px;
+    background-size: 100%;
+    border-radius: 10px;
+}
+
+.steak {
+    background-image: url("../assets/food4.jpg");
+    height: 60px;
+    width: 60px;
+    background-size: 100%;
+    border-radius: 10px;
+}

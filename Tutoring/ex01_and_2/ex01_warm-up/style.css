@@ -1,0 +1,47 @@
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   display: flex;
+   justify-content: center;
+   margin: 0 auto;
+   padding: 2em;
+}
+
+/* Write you CSS code bellow */
+
+p {
+   color: tomato;
+   margin-bottom: 0;
+}
+
+span {
+   color: violet;
+   font-weight: 700;
+}
+
+li {
+   list-style: none;
+   margin: 0;
+}
+
+.note {
+   font-size: 20px;
+}
+
+#id-selector {
+   color: green;
+}
+
+li[value="4"] {
+   color: blue;
+}
+
+* {
+   text-align: center;
+}
+
+.case {
+   border: 5px solid blanchedalmond;
+   border-radius: 10%;
+   padding: 100px;
+   background-image: url(../../../../../Rose/rose.jpg);
+}
