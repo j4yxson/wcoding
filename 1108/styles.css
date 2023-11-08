@@ -1,0 +1,462 @@
+.bigcontainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bigcontainer2 {
+    display: flex;
+    height: 60vh;
+    justify-content: center;
+}
+
+
+* {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.maincontainer1 {
+    width: 50vw;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 5px -3px gray;
+    margin-bottom: 50px;
+}
+
+
+.logo {
+    background-image: url("pics/logo.jpg");
+    background-size: 100%;
+    height: 100px;
+    width: 100px;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.maincontainer2 {
+    display: flex;
+}
+
+
+.ff {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+}
+
+.fff {
+    display: flex;
+    width: 100%;
+    border: 1px solid grey;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.ffff {
+    background-image: url("pics/ff.jpeg");
+    background-size: 100%;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.main1 {
+    border: 1px solid gray;
+    margin-right: 50px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.bfast {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+}
+
+.breakfast {
+    background-image: url("pics/breakfast.jpeg");
+    background-size: 100%;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.burg {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+}
+
+.burgers {
+    background-image: url("pics/burgers.jpeg");
+    background-size: 100%;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.mcnug {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+}
+
+.mcnuggets {
+    background-image: url("pics/mcnugs.jpeg");
+    background-size: 100%;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.fries {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+}
+
+.friessides {
+    background-image: url("pics/fries.jpeg");
+    background-size: 100%;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.hmeal {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+}
+
+.happy {
+    background-image: url("pics/hpmeal.jpeg");
+    background-size: 100%;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.bev {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+}
+
+.beverages {
+    background-image: url("pics/bevs.jpeg");
+    background-size: 100%;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.main2 {
+    width: 40vw;
+    height: 75vh;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.bigmacmain {
+    display: flex;
+    flex-direction: column;
+}
+
+.bigmac {
+    background-image: url("pics/bigmac.jpeg");
+    background-position-y: 0px;
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    text-align: center;
+    flex-direction: column;
+    padding: 10px;
+
+}
+
+.bigmacdesc {
+    text-align: center;
+}
+
+.qpcmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.qpc {
+    background-image: url("pics/qpc.jpeg");
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+
+}
+
+.qpcdesc {
+    text-align: center;
+    width: 100px;
+    text-wrap: wrap;
+}
+
+.qpccmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qpcc {
+    background-image: url("pics/qpcc.jpeg");
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+}
+
+.qpccdesc {
+    text-align: center;
+    width: 100px;
+    text-wrap: wrap;
+}
+
+.qpcdmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qpcd {
+    background-image: url("pics/qpcd.jpeg");
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+}
+
+.qpcddesc {
+    text-align: center;
+    width: 100px;
+    text-wrap: wrap;
+}
+
+.mcdmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mcd {
+    background-image: url("pics/mcd.jpeg");
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    text-align: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.mcddesc {
+    text-align: center;
+    width: 100px;
+    text-wrap: wrap;
+}
+
+.qpcbmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qpcb {
+    display: flex;
+    background-image: url("pics/qpcb.jpeg");
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    text-align: center;
+}
+
+.qpcbdesc {
+    text-align: center;
+    width: 100px;
+    text-wrap: wrap;
+}
+
+.cheesemain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cheese {
+    background-image: url("pics/cheese.jpeg");
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+}
+
+.cheesedesc {
+    text-align: center;
+    width: 100px;
+    text-wrap: wrap;
+}
+
+.dcheesemain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dcheese {
+    background-image: url("pics/dcheese.jpeg");
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+}
+
+.dcheesedesc {
+    text-align: center;
+    width: 100px;
+    text-wrap: wrap;
+}
+
+.hammain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ham {
+    background-image: url("pics/ham.jpeg");
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+}
+
+.hamdesc {
+    text-align: center;
+    width: 100px;
+    text-wrap: wrap;
+}
+
+
+.cards {
+    display: flex;
+    margin-top: 50px;
+    gap: 20px;
+    width: 70vw;
+}
+
+img {
+    width: 100%;
+}
+
+.card1 {
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+.card1desc {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+.card2 {
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+.card3 {
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+h2 {
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-bottom: 0;
+}
+
+button {
+    background-color: orange;
+    width: 200px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.card1disc {
+
+    padding: 10px;
+}
