@@ -1,0 +1,272 @@
+body {
+    background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%);
+    opacity: .95;
+    height: 400vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* * {
+    border: 1px solid;
+} */
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+.q {
+    width: 50vw;
+}
+
+.q1,
+.a1,
+.lineartitle,
+.radial,
+.conical {
+    text-align: center;
+}
+
+.q1 {
+    text-decoration: underline;
+}
+
+.linearexamples,
+.radialexamples,
+.conicalexamples {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.lineartoprow,
+.linearmiddlerow,
+.radialtoprow,
+.radialmiddlerow,
+.radialbottomrow,
+.conicaltoprow,
+.conicalbottomrow {
+    display: flex;
+    gap: 20px;
+    width: 80vw;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.toptobottom,
+.lefttoright,
+.diagonal,
+.angle,
+.repeating,
+.transparency,
+.lineartesting,
+.defaultradial,
+.spacedradial,
+.circleradial,
+.repeatingradial,
+.radialcenterpos,
+.eclosestside,
+.eclosestcorner,
+.cclosestside,
+.cclosestcorner,
+.threecolors,
+.degrees,
+.repeatingpie,
+.fromangle,
+.pfromangle,
+.mac {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lefttoright :nth-child(2),
+.toptobottom :nth-child(2),
+.diagonal :nth-child(2),
+.angle :nth-child(2),
+.repeating :nth-child(2),
+.transparency :nth-child(2),
+.defaultradial :nth-child(2),
+.spacedradial :nth-child(2),
+.circleradial :nth-child(2),
+.repeatingradial :nth-child(2),
+.radialcenterpos :nth-child(2),
+.eclosestside :nth-child(2),
+.eclosestcorner :nth-child(2),
+.cclosestside :nth-child(2),
+.cclosestcorner :nth-child(2) {
+    width: 350px;
+    height: 100px;
+}
+
+.threecolors :nth-child(2),
+.degrees :nth-child(2),
+.repeatingpie :nth-child(2),
+.fromangle :nth-child(2),
+.pfromangle :nth-child(2),
+.mac :nth-child(2) {
+    width: 200px;
+    height: 200px;
+}
+
+.lineartesting :last-child {
+    width: 800px;
+    height: 400px;
+
+}
+
+.toptobottom :nth-child(2) {
+    background-image: linear-gradient(red, white, blue);
+}
+
+
+.lefttoright :nth-child(2) {
+    background-image: linear-gradient(to right, red, white, blue);
+}
+
+.diagonal :nth-child(2) {
+    background-image: linear-gradient(to bottom right, red, white, blue);
+}
+
+.lefttoright :first-child,
+.toptobottom :first-child,
+.diagonal :first-child,
+.angle :first-child,
+.repeating :first-child,
+.transparency :first-child,
+.lineartesting :first-child,
+.defaultradial :first-child,
+.spacedradial :first-child,
+.circleradial :first-child,
+.repeatingradial :first-child,
+.radialcenterpos :first-child,
+.eclosestside :first-child,
+.eclosestcorner :first-child,
+.cclosestside :first-child,
+.cclosestcorner :first-child,
+.threecolors :first-child,
+.degrees :first-child,
+.repeatingpie :first-child,
+.fromangle :first-child,
+.pfromangle :first-child,
+.mac :first-child {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.lefttoright :last-child,
+.toptobottom :last-child,
+.diagonal :last-child,
+.angle :last-child,
+.repeating :last-child,
+.transparency :last-child,
+.defaultradial :last-child,
+.spacedradial :last-child,
+.circleradial :last-child,
+.repeatingradial :last-child,
+.radialcenterpos :last-child,
+.eclosestside :last-child,
+.eclosestcorner :last-child,
+.cclosestside :last-child,
+.cclosestcorner :last-child,
+.threecolors :last-child,
+.degrees :last-child,
+.repeatingpie :last-child,
+.fromangle :last-child,
+.pfromangle :last-child,
+.mac :last-child {
+    font-size: 10px;
+}
+
+.angle :nth-child(2) {
+    background-image: linear-gradient(270deg, red, white, blue);
+}
+
+
+.repeating :nth-child(2) {
+    background-image: repeating-linear-gradient(to right, red, white, blue 33%);
+}
+
+.transparency :nth-child(2) {
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+}
+
+.lineartesting :last-child {
+    background-image: linear-gradient(to right, red 20%, orange 20% 40%, yellow 40% 60%, green 60% 80%, blue 80%);
+}
+
+.defaultradial :nth-child(2) {
+    background-image: radial-gradient(red, yellow, green);
+}
+
+.spacedradial :nth-child(2) {
+    background-image: radial-gradient(red 5%, yellow 15%, green);
+}
+
+.circleradial :nth-child(2) {
+    background-image: radial-gradient(circle, red, yellow, green);
+}
+
+.repeatingradial :nth-child(2) {
+    background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+}
+
+.radialcenterpos :nth-child(2) {
+    background-image: radial-gradient(at 0% 30%, red 10px, yellow 30%, #1e90ff 50%);
+}
+
+.eclosestside :nth-child(2) {
+    background-image: radial-gradient(ellipse closest-side, red, yellow 10%, #1e90ff 50%, beige);
+}
+
+.eclosestcorner :nth-child(2) {
+    background-image: radial-gradient(ellipse closest-corner, red, yellow 10%, #1e90ff 50%, beige);
+}
+
+.cclosestside :nth-child(2) {
+    background-image: radial-gradient(circle closest-side at 25% 75%, red, yellow 10%, #1e90ff 50%, beige);
+}
+
+.cclosestcorner :nth-child(2) {
+    background-image: radial-gradient(circle closest-corner at 25% 75%, red, yellow 10%, #1e90ff 50%, beige);
+}
+
+.threecolors :nth-child(2) {
+    background-image: conic-gradient(red, yellow, blue);
+}
+
+.degrees :nth-child(2) {
+    background-image: conic-gradient(red 45deg, yellow 90deg, blue 210deg);
+}
+
+.repeatingpie :nth-child(2) {
+    background-image: conic-gradient(red, yellow, green, blue, black);
+    border-radius: 50%;
+}
+
+.fromangle :nth-child(2) {
+    background-image: conic-gradient(from 90deg, red, yellow, blue);
+}
+
+.pfromangle :nth-child(2) {
+    background-image: conic-gradient(at 60% 45%, red, yellow, blue);
+}
+
+.mac :nth-child(2) {
+    background-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+    border-radius: 50%;
+}

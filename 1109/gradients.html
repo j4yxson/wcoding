@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradients</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Gradients</h1>
+    </header>
+    <main>
+        <div class="box1">
+            <div class="q">
+                <h2 class="q1">
+                    What is a gradient?
+                </h2>
+                <h2 class="a1">
+                    The gradient CSS data type is a special type of image that consists of a
+                    progress transition between
+                    two or more colors, also known as color stops
+                </h2>
+                <br>
+            </div>
+        </div>
+        <div class="types">
+            <h2>There are 3 types of gradients</h2>
+            <ul>
+                <li>Linear Gradients</li>
+                <li>Radial Gradients</li>
+                <li>Conic Gradients</li>
+            </ul>
+        </div>
+        <br>
+        <div class="lineartitle">
+            <div class="desc">
+                <h2>Linear Gradients ( linear-gradient() )</h2>
+                <p>
+                    These types of gradients are exactly as they sound, they move along in a linear fashion
+                </p>
+                <p>
+                    They can move by default from top to bottom, but you can also specify the direction in your code as
+                    well
+                </p>
+            </div>
+        </div>
+        <div class="linearexamples">
+            <h2 class="linearheader">Examples</h2>
+            <div class="lineartoprow">
+                <div class="toptobottom">
+                    <div>
+                        Default (Top to Bottom)
+                    </div>
+                    <div></div>
+                    <div>
+                        background-image: linear-gradient(red, white, blue);
+                    </div>
+                </div>
+                <div class="lefttoright">
+                    <div>
+                        Left to Right
+                    </div>
+                    <div></div>
+                    <div>
+                        linear-gradient(to right, red, white, blue);
+                    </div>
+                </div>
+                <div class="diagonal">
+                    <div>
+                        Diagonal
+                    </div>
+                    <div></div>
+                    <div>
+                        linear-gradient(to bottom right,red, white, blue);
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="linearmiddlerow">
+                <div class="angle">
+                    <div>
+                        Angle
+                    </div>
+                    <div></div>
+                    <div>
+                        linear-gradient(270deg, red, white, blue);
+                    </div>
+                </div>
+                <div class="repeating">
+                    <div>
+                        Repeating
+                    </div>
+                    <div></div>
+                    <div>
+                        repeating-linear-gradient(to right, red, white, blue 33%);
+                    </div>
+                </div>
+                <div class="transparency">
+                    <div>
+                        Transparency
+                    </div>
+                    <div></div>
+                    <div>
+                        linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="linearbottomrow">
+                <div class="lineartesting">
+                    <div>
+                        Linear Positioning
+                    </div>
+                    <div>linear-gradient(to right,
+                        red 20%,
+                        orange 20% 40%,
+                        yellow 40% 60%,
+                        green 60% 80%,
+                        blue 80%)</div>
+                </div>
+            </div>
+        </div>
+        <div class="radial">
+            <div class="desc">
+                <h2>Radial Graidents ( radial-gradient() )</h2>
+                <p>
+                    Radial gradients are similar to linear gradients, except that they radiate out from a central point.
+                </p>
+                <p>
+                    You can dictate where that central point is and can also make them circular or elliptical.
+                </p>
+            </div>
+            <div class="radialexamples">
+                <h2>Examples</h2>
+                <div class="radialtoprow">
+                    <div class="defaultradial">
+                        <div>Default Radial</div>
+                        <div></div>
+                        <div>radial-gradient(red, yellow, green)</div>
+                    </div>
+                    <div class="spacedradial">
+                        <div>Spaced Radial</div>
+                        <div></div>
+                        <div>radial-gradient(red 5%, yellow 15%, green)</div>
+                    </div>
+                    <div class="circleradial">
+                        <div>Circle Radial</div>
+                        <div></div>
+                        <div>radial-gradient(circle, red, yellow, green)</div>
+                    </div>
+                </div>
+                <br>
+                <div class="radialmiddlerow">
+                    <div class="repeatingradial">
+                        <div>Repeating Radial</div>
+                        <div></div>
+                        <div>repeating-radial-gradient(red, yellow 10%, green 15%);</div>
+                    </div>
+                    <div class="radialcenterpos">
+                        <div>Radial Center Position</div>
+                        <div></div>
+                        <div>radial-gradient(at 0% 30%, red 10px, yellow 30%, #1e90ff 50%);</div>
+                    </div>
+                    <div class="eclosestside">
+                        <div>Ellipses Closest Side</div>
+                        <div></div>
+                        <div>radial-gradient(ellipse closest-side,red,yellow 10%,#1e90ff 50%,beige);</div>
+                    </div>
+                </div>
+                <br>
+                <div class="radialbottomrow">
+                    <div class="eclosestcorner">
+                        <div>Ellipses Closest Corner</div>
+                        <div></div>
+                        <div>radial-gradient(ellipse closest-corner, red, yellow 10%, #1e90ff 50%, beige)</div>
+                    </div>
+                    <div class="cclosestside">
+                        <div>Circle Closest Side</div>
+                        <div></div>
+                        <div>radial-gradient(circle closest-side at 25% 75%, red, yellow 10%, #1e90ff
+                            50%, beige);
+                        </div>
+                    </div>
+                    <div class="cclosestcorner">
+                        <div>Circle Closest Corner</div>
+                        <div></div>
+                        <div>radial-gradient(circle closest-corner at 25% 75%, red, yellow 10%, #1e90ff 50%, beige)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="conical">
+            <div class="desc">
+                <h2>Conical Graidents ( conic-gradient() )</h2>
+                <p>
+                    A conic gradient is a gradient with color transitions rotated around a center point.
+                </p>
+                <p>
+                    To create a conic gradient you must define at least two colors.
+                </p>
+            </div>
+            <div class="conicalexamples">
+                <h2>Examples</h2>
+                <div class="conicaltoprow">
+                    <div class="threecolors">
+                        <div>3 Color Conic Gradient</div>
+                        <div></div>
+                        <div>conic-gradient(red, yellow, blue);</div>
+                    </div>
+                    <div class="degrees">
+                        <div>Conic Degrees</div>
+                        <div></div>
+                        <div>conic-gradient(red 45deg, yellow 90deg, green 210deg);</div>
+                    </div>
+                    <div class="repeatingpie">
+                        <div>Pie Chart</div>
+                        <div></div>
+                        <div> conic-gradient(red, yellow, green, blue, black);
+                            border-radius: 50%;</div>
+                    </div>
+                </div>
+                <br>
+                <div class="conicalbottomrow">
+                    <div class="fromangle">
+                        <div>Conic Gradient with Angle</div>
+                        <div></div>
+                        <div>conic-gradient(from 90deg, red, yellow, blue)</div>
+                    </div>
+                    <div class="pfromangle">
+                        <div>Conic Center Position</div>
+                        <div></div>
+                        <div>conic-gradient(at 60% 45%, red, yellow, blue)</div>
+                    </div>
+                    <div class="mac">
+                        <div>Mac Spinning Beach Ball</div>
+                        <div></div>
+                        <div>conic-gradient(red, yellow, lime, aqua, blue, magenta, red)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
