@@ -1,0 +1,334 @@
+body {
+    background-image: url("tesla.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    margin: 0;
+}
+
+@font-face {
+    font-family: teslafont;
+    src: url("tesla/TESLA.ttf")
+}
+
+.maincontainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* top portion */
+
+/* tax disclaimer */
+.tax {
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at 50% -200%, white, darkblue);
+    padding: 10px 10px 30px;
+}
+
+
+.tax div p span {
+    font-weight: bold;
+}
+
+.tax a {
+    text-decoration: underline;
+    color: white;
+}
+
+/* logo and menu section */
+
+.logomenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* tesla logo */
+
+.logo h2 a {
+    font-family: teslafont;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 10px;
+    font-weight: lighter;
+    margin-left: 10px;
+
+}
+
+/* navbar styling */
+
+.navbarflex {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 20px;
+    height: 80vh;
+    justify-content: space-between;
+}
+
+.vehiclesdiv,
+.chargingdiv,
+.energydiv,
+.discoverdiv,
+.usdiv {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+ul div li svg,
+.usdivpart1>svg,
+.usdivpart1~svg,
+.navbarflex:last-child svg {
+    height: 20px;
+    width: 20px;
+}
+
+ul li {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 15px;
+
+}
+
+.usdivpart1 {
+    display: flex;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.navbar {
+    display: none;
+}
+
+.navbar {
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+}
+
+.navbarflex>li>label {
+    color: black;
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* menu label */
+#menu {
+    display: none;
+}
+
+.menu label {
+    padding: 10px;
+}
+
+/* displaying dropdown when clicked */
+#menu:checked~.navbar {
+    display: block;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+/* model y section */
+.modely {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.modely h1,
+.modely h4 {
+    margin: 0;
+}
+
+
+/* bottom of the screen section */
+.teslabot {
+    text-align: center;
+}
+
+.buttonsdiv {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* ordernow/demodrive button */
+.ordernow,
+.demodrive {
+    height: 35px;
+    width: 80vw;
+    border-radius: 4px;
+
+}
+
+.ordernow {
+    background-color: rgb(35, 33, 33);
+}
+
+.demodrive {
+    background-color: whitesmoke;
+    opacity: .8;
+}
+
+.ordernow a {
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    font-family: sans-serif;
+    line-height: 200%;
+}
+
+.demodrive a {
+    border: none;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    font-family: sans-serif;
+    line-height: 200%;
+}
+
+/* dislaimer text at bottom */
+
+.teslabot p {
+    font-size: 10px;
+    margin-bottom: 30px;
+}
+
+.bottext a {
+    color: white;
+}
+
+/* center navbar styling */
+.navbarCenter {
+    display: none;
+}
+
+.navbarCenter ul div li {
+    list-style: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 9px;
+}
+
+.iconpics {
+    display: none;
+}
+
+@media screen and (min-width:500px) {
+    .tax {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 3px;
+        background-color: darkblue;
+    }
+
+    .taxpart1 {
+        margin: 0px 0px 0px 100px;
+    }
+
+    .taxpart2 {
+        margin-left: 20px;
+    }
+
+    .logo {
+        margin-left: 40px;
+    }
+
+    .menu {
+        display: none
+    }
+
+    .navbarCenteritems {
+        display: flex;
+    }
+
+    .navbarCenter {
+        display: flex;
+        margin-left: -129px;
+    }
+
+    .iconpics {
+        display: flex;
+        margin-right: 10px;
+    }
+
+    .iconpics li {
+        padding: 0px;
+        padding-right: 7px;
+    }
+
+    .teslatop {
+        position: sticky;
+        top: 0px;
+    }
+
+    .buttonsdiv {
+        flex-direction: row;
+    }
+
+    .ordernow,
+    .demodrive {
+        width: 300px;
+    }
+
+    .teslabot {
+        margin-bottom: 70px;
+    }
+
+    .ordernow {
+        background-color: whitesmoke;
+    }
+
+    .demodrive {
+        background-color: rgb(35, 33, 33);
+    }
+
+    .ordernow a {
+        color: black;
+    }
+
+    .demodrive a {
+        color: white;
+    }
+
+    .teslabot p {
+        font-size: 15px;
+    }
+
+    .bottext {
+        display: flex;
+    }
+}
