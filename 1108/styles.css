@@ -1,3 +1,7 @@
+:root {
+    --width: 100%;
+}
+
 .bigcontainer {
     height: 100vh;
     display: flex;
@@ -11,7 +15,6 @@
     height: 60vh;
     justify-content: center;
 }
-
 
 * {
     font-family: sans-serif;
@@ -48,7 +51,7 @@ h1 {
 
 header {
     display: flex;
-    width: 100%;
+    width: var(--width);
     justify-content: space-between;
     align-items: center;
     padding: 10px;
@@ -77,6 +80,19 @@ header {
 
 .ffff {
     background-image: url("pics/ff.jpeg");
+}
+
+.breakfast {
+    background-image: url("pics/breakfast.jpeg");
+}
+
+.ffff,
+.breakfast,
+.burgers,
+.mcnuggets,
+.friessides,
+.happy,
+.beverages {
     background-size: 100%;
     height: 75px;
     width: 75px;
@@ -95,22 +111,7 @@ header {
     padding: 5px;
 }
 
-.bfast {
-    display: flex;
-    width: 100%;
-    justify-content: left;
-    align-items: center;
-}
-
-.breakfast {
-    background-image: url("pics/breakfast.jpeg");
-    background-size: 100%;
-    height: 75px;
-    width: 75px;
-    display: flex;
-    align-items: center;
-}
-
+.bfast,
 .burg {
     display: flex;
     width: 100%;
@@ -118,13 +119,9 @@ header {
     align-items: center;
 }
 
+
 .burgers {
-    background-image: url("pics/burgers.jpeg");
-    background-size: 100%;
-    height: 75px;
-    width: 75px;
-    display: flex;
-    align-items: center;
+    background-image: url("pics/burgers.jpeg")
 }
 
 .mcnug {
@@ -136,11 +133,6 @@ header {
 
 .mcnuggets {
     background-image: url("pics/mcnugs.jpeg");
-    background-size: 100%;
-    height: 75px;
-    width: 75px;
-    display: flex;
-    align-items: center;
 }
 
 .fries {
@@ -152,11 +144,6 @@ header {
 
 .friessides {
     background-image: url("pics/fries.jpeg");
-    background-size: 100%;
-    height: 75px;
-    width: 75px;
-    display: flex;
-    align-items: center;
 }
 
 .hmeal {
@@ -168,11 +155,6 @@ header {
 
 .happy {
     background-image: url("pics/hpmeal.jpeg");
-    background-size: 100%;
-    height: 75px;
-    width: 75px;
-    display: flex;
-    align-items: center;
 }
 
 .bev {
@@ -184,11 +166,6 @@ header {
 
 .beverages {
     background-image: url("pics/bevs.jpeg");
-    background-size: 100%;
-    height: 75px;
-    width: 75px;
-    display: flex;
-    align-items: center;
 }
 
 .main2 {
@@ -228,7 +205,11 @@ h1 {
     text-align: center;
 }
 
-.qpcmain {
+.qpcmain,
+.qpccmain,
+.qpcdmain,
+.mcdmain,
+.qpcbmain {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,12 +233,6 @@ h1 {
     text-wrap: wrap;
 }
 
-.qpccmain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .qpcc {
     background-image: url("pics/qpcc.jpeg");
     width: 100px;
@@ -272,12 +247,6 @@ h1 {
     text-align: center;
     width: 100px;
     text-wrap: wrap;
-}
-
-.qpcdmain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .qpcd {
@@ -296,11 +265,6 @@ h1 {
     text-wrap: wrap;
 }
 
-.mcdmain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .mcd {
     background-image: url("pics/mcd.jpeg");
@@ -318,11 +282,6 @@ h1 {
     text-wrap: wrap;
 }
 
-.qpcbmain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .qpcb {
     display: flex;
@@ -401,7 +360,7 @@ h1 {
 
 .hamdesc {
     text-align: center;
-    width: 100px;
+    width: var(--width);
     text-wrap: wrap;
 }
 
@@ -457,6 +416,5 @@ button {
 }
 
 .card1disc {
-
     padding: 10px;
 }

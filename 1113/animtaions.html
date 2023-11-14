@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes stuff {
+            /* 0% {
+                width: 200px;
+            }
+
+            50% {
+                width: 300px;
+            }
+
+            100% {
+                width: 1000px;
+            } */
+
+            from {
+                width: 200px;
+                height: 500px;
+                opacity: 0;
+                background-image: url("../pics/rose.jpg");
+                background-size: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            to {
+                width: 1000px;
+                height: 500px;
+                background-image: url("../pics/rose.jpg");
+                background-size: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .box {
+            /* width: 300px; */
+            height: 200px;
+            border-radius: 5px;
+            background-color: violet;
+            animation: 1s infinite alternate stuff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

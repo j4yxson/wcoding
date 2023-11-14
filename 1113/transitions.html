@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 5px;
+            margin-left: 0px;
+            transition: margin 2s, height 4s;
+            /* has to exist on the source rather than the hover */
+        }
+
+        .box:hover~.circle {
+            margin: 200px;
+            height: 400px;
+            transform: skew(20deg);
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: goldenrod;
+            transform: rotate(0deg) skew(0deg);
+            transition: margin 2s 2s, height 4s, transform 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="circle"></div>
+</body>
+
+</html>

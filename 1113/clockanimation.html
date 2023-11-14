@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        .container {
+            height: 100vh;
+            position: relative;
+            transform: rotate(-0.25turn);
+        }
+
+        .clock {
+            border: 1px solid;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url("../pics/rose.jpg");
+            background-size: 100%;
+            background-position: center;
+        }
+
+        @keyframes seconds {
+            from {
+                position: relative;
+                left: 50%;
+                margin-left: 0;
+                background-color: black;
+                height: 2px;
+                top: 43%;
+                width: 50%;
+                transform-origin: top left;
+            }
+
+            to {
+                transform: rotate(1turn);
+            }
+        }
+
+        @keyframes minutes {
+            from {
+                position: relative;
+                left: 50%;
+                margin-left: 0;
+                background-color: red;
+                height: 3px;
+                top: 45%;
+                width: 50%;
+                transform-origin: top left;
+            }
+
+            to {
+                transform: rotate(1turn);
+            }
+        }
+
+        @keyframes hours {
+            from {
+                position: relative;
+                background-color: blue;
+                height: 5px;
+                left: 50%;
+                margin-left: 0%;
+                top: 48%;
+                width: 30%;
+                transform-origin: top left;
+            }
+
+            to {
+                transform: rotate(1turn);
+            }
+
+        }
+
+        .seconds {
+            position: relative;
+            left: 50%;
+            margin-left: 0;
+            background-color: black;
+            height: 2px;
+            top: 43%;
+            width: 50%;
+            transform-origin: top left;
+            animation: 60s linear infinite seconds;
+        }
+
+        .minutes {
+            position: relative;
+            left: 50%;
+            margin-left: 0;
+            background-color: red;
+            height: 3px;
+            top: 45%;
+            width: 50%;
+            transform-origin: top left;
+            animation: 3600s linear infinite minutes;
+        }
+
+        .hours {
+            position: relative;
+            background-color: blue;
+            height: 5px;
+            left: 50%;
+            margin-left: 0%;
+            top: 48%;
+            width: 30%;
+            transform-origin: top left;
+            animation: 43200s linear infinite hours;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <hr class="hours" />
+            <hr class="minutes" />
+            <hr class="seconds" />
+        </div>
+    </div>
+</body>
+
+</html>

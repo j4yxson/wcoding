@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        .container {
+            height: 100vh;
+            position: relative;
+            transform: rotate(-0.25turn);
+        }
+
+        .clock {
+            border: 1px solid;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .clock:hover {
+            background-image: url(../pics/rose.jpg);
+            background-position: center;
+            background-size: 100%;
+            transition: 6s;
+        }
+
+        .clock:hover .seconds {
+            transform: rotate(86400turn);
+            transition: linear 5184000s;
+        }
+
+        .clock:hover .minutes {
+            transform: rotate(1440turn);
+            transition: linear 5184000s;
+        }
+
+        .clock:hover .hours {
+            transform: rotate(24turn);
+            transition: linear 5184000s;
+        }
+
+        .seconds {
+            position: relative;
+            left: 50%;
+            margin-left: 0;
+            background-color: black;
+            height: 2px;
+            top: 43%;
+            width: 50%;
+            transform-origin: top left;
+        }
+
+        .minutes {
+            position: relative;
+            left: 50%;
+            margin-left: 0;
+            background-color: red;
+            height: 3px;
+            top: 45%;
+            width: 50%;
+            transform-origin: top left;
+        }
+
+        .hours {
+            position: relative;
+            background-color: blue;
+            height: 5px;
+            left: 50%;
+            margin-left: 0%;
+            top: 48%;
+            width: 30%;
+            transform-origin: top left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <hr class="hours" />
+            <hr class="minutes" />
+            <hr class="seconds" />
+        </div>
+    </div>
+</body>
+
+</html>
