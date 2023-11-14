@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise1</title>
+
+    <style>
+        .container {
+            width: 80%;
+            margin: 100px auto;
+            padding-bottom: 50px;
+            border-bottom: 1px solid gray;
+            position: relative;
+        }
+
+        .text,
+        .text1 {
+            font-size: 30px;
+        }
+
+        /* custom marquee */
+        @keyframes marquee {
+            to {
+                transform: translate(400%);
+            }
+        }
+
+        .text1 {
+            animation: 3s infinite linear marquee;
+            display: inline-block;
+        }
+
+        /* square rainbow */
+        .square {
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background-color: black;
+        }
+
+        .square:hover {
+            background: linear-gradient(red 0% 14%, orange 14% 28%, yellow 28% 42%, green 42% 56%, blue 56% 70%, indigo 70% 84%, violet 84%);
+            height: 200px;
+            width: 200px;
+            transition: 1s;
+        }
+
+
+        /* bouncing basketball */
+        .basketball {
+            width: 100px;
+            animation: 1s infinite alternate bounce;
+            position: relative;
+            bottom: 0px;
+        }
+
+        .basketball-net {
+            width: 200px;
+            float: right;
+        }
+
+        @keyframes bounce {
+            to {
+                bottom: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- is a marquee -->
+        <div>
+            <marquee><span class="text">hello I'm a marquee!</span></marquee>
+        </div>
+
+        <!-- please make me behave the same or better than a marquee! -->
+        <div>
+            <span class="text1">Make me at least as good as him!</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- I want to have all the color of the rainbow ! -->
+        <div class="square"></div>
+    </div>
+
+    <div class="container">
+        <!-- Make me bounce on the "ground" -->
+        <img class="basketball" src="https://svgsilh.com/svg/309539.svg" alt="basketball" />
+        <!-- BONUS: If you can, make me go into through net -->
+        <img class="basketball-net" src="https://svgsilh.com/svg/157846.svg" alt="basketball net" />
+    </div>
+</body>
+
+</html>

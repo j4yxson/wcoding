@@ -1,0 +1,221 @@
+/* * {
+    border: 2px solid white;
+} */
+
+body {
+    background-color: blanchedalmond;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.worm {
+    position: relative;
+    animation: .5s alternate infinite scale;
+}
+
+/* body */
+.worm img:first-child {
+    position: relative;
+    z-index: 1;
+}
+
+/* right eye */
+.worm img:nth-child(2) {
+    position: absolute;
+    top: 90px;
+    left: 220px;
+    transform: rotate(180deg);
+    z-index: 3;
+}
+
+/* left eye */
+.worm img:nth-child(3) {
+    position: absolute;
+    top: 90px;
+    left: 40px;
+    z-index: 3;
+}
+
+/* right blush */
+.worm img:nth-child(4) {
+    position: absolute;
+    top: 110px;
+    left: 220px;
+    z-index: 2;
+    opacity: 0;
+    animation: .5s alternate infinite rblush;
+}
+
+
+/* left blush */
+.worm img:nth-child(5) {
+    position: absolute;
+    top: 110px;
+    left: 35px;
+    z-index: 2;
+    opacity: 0;
+    animation: .5s alternate infinite lblush;
+}
+
+/* left horn */
+.worm img:nth-child(6) {
+    position: absolute;
+    top: -55px;
+    left: 30px;
+    z-index: 0;
+    animation: .5s alternate infinite lhorn;
+}
+
+/* right horn */
+.worm img:nth-child(7) {
+    position: absolute;
+    top: -56px;
+    left: 175px;
+    z-index: 0;
+    animation: .5s alternate infinite rhorn;
+}
+
+/* mouth */
+.worm img:nth-child(8) {
+    position: absolute;
+    top: 140px;
+    left: 40px;
+    z-index: 2;
+    animation: .5s ease-in-out alternate infinite mouth;
+}
+
+/* tail */
+.worm img:nth-child(9) {
+    position: absolute;
+    top: 172px;
+    left: 270px;
+    animation: .5s alternate infinite tail;
+}
+
+/* fire */
+.worm img:last-child {
+    position: absolute;
+    top: 140px;
+    left: 120px;
+    z-index: 5;
+    width: 50px;
+    opacity: 0;
+    animation: 1s linear infinite flame;
+}
+
+/* .circle {
+    border: 2px white solid;
+    border-radius: 50%;
+    height: 270px;
+    width: 270px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    background-color: rgba(red, green, blue, 1);
+    animation: .5s alternate infinite circ;
+} */
+
+.loadingbar {
+    height: 30px;
+    width: 500px;
+    background-color: gray;
+    border-radius: 50px;
+    position: relative;
+}
+
+.loading {
+    position: absolute;
+    height: 30px;
+    width: 0px;
+    background-color: transparent;
+    border-radius: 50px;
+    animation: 3s linear infinite loading;
+    background-color: orange;
+}
+
+@keyframes loading {
+    to {
+        width: 500px;
+
+    }
+}
+
+@keyframes scale {
+    to {
+        transform: scale(120%);
+    }
+}
+
+/* @keyframes mouth {
+    from {
+        transform: scale(50%);
+    }
+
+    to {
+        transform: scale(110%);
+    }
+} */
+
+@keyframes flame {
+    to {
+        transform: scale(150%);
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+@keyframes lblush {
+    to {
+        transform: scale(110%);
+        opacity: 1;
+    }
+}
+
+@keyframes rblush {
+    to {
+        transform: scale(110%);
+        opacity: 1;
+    }
+}
+
+@keyframes tail {
+    to {
+        transform: scale(120%);
+    }
+}
+
+@keyframes lhorn {
+    to {
+        top: -55px;
+        left: 40px;
+        transform: scale(110%);
+    }
+}
+
+@keyframes rhorn {
+    to {
+        top: -56px;
+        left: 165px;
+        transform: scale(110%);
+    }
+}
+
+/* @keyframes circ {
+    from {
+        top: -140px;
+    }
+
+    to {
+        top: 10px;
+    }
+} */

@@ -1,0 +1,108 @@
+/* flex so background can be centered */
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 10s infinite daynnite;
+    overflow-y: hidden;
+}
+
+/* absolute so its top left of container */
+.sun {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    border-radius: 50%;
+    outline: dashed 10px orange;
+    background-repeat: no-repeat;
+}
+
+/* absolute so bottom right of container */
+.moon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url("../pics/moon.png");
+    background-size: 100%;
+    border-radius: 50%;
+    bottom: 0px;
+    right: 0px;
+    margin: 0;
+}
+
+/* container */
+.background {
+    width: 1300px;
+    height: 800px;
+    position: relative;
+    animation: 10s infinite linear orbit;
+    top: 400px;
+}
+
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+/* @keyframes daynnite {
+    0% {
+        background-color: lightblue;
+    }
+
+    33% {
+        background-color: lightblue;
+    }
+
+    60% {
+        background-color: darkblue;
+    }
+
+    85% {
+        background-color: darkblue;
+    }
+
+    100% {
+        background-color: lightblue;
+    }
+} */
+
+@keyframes daynnite {
+    0% {
+        background: url("../pics/windowsbackground.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    33% {
+        background: url("../pics/windowsbackground.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    60% {
+        background: url("../pics/nighttimewindows.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    85% {
+        background: url("../pics/nighttimewindows.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    100% {
+        background: url("../pics/windowsbackground.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+}
