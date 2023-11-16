@@ -1,0 +1,800 @@
+/* border command */
+/* border: 3px purple solid; */
+
+body {
+    margin: 0;
+}
+
+/* main background */
+.mainpage {
+    height: 100vh;
+    width: 100vw;
+    background: url("https://img.79plus.co.kr/megahp/manager/upload/main/20230913162951_1694590191548_EBwH28eQ9f.jpg?ver=202207071306");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.desktopmainpagepics {
+    display: none;
+    overflow: auto;
+}
+
+.mpics {
+    height: 100vh;
+    width: 100vw;
+}
+
+.phonemainpagepics {
+    display: flex;
+    overflow: auto;
+}
+
+/* navbar */
+.nav {
+    display: flex;
+    height: 5vh;
+    background-color: transparent;
+    z-index: 1;
+    position: fixed;
+    /* border: 3px purple solid; */
+    justify-content: space-between;
+    align-items: center;
+    top: 0px;
+    width: 100vw;
+    box-shadow: 0px 1px 3px lightgray;
+}
+
+/* top left logo yellow */
+.logo img:first-child {
+    display: none;
+    position: absolute;
+}
+
+/* top left logo black */
+.logo img:last-child {
+    border: 0;
+    max-width: 100%;
+    height: 30px;
+    margin: 20px 10px;
+    /* border: 3px purple solid; */
+}
+
+/* hamburger */
+.hamburger input {
+    /* border: 3px purple solid; */
+    display: none;
+}
+
+#hamburger~label svg {
+    margin-right: 20px;
+}
+
+
+/* mobileNav */
+.mobileNav {
+    display: none;
+    background-color: black;
+    height: 100vh;
+    margin: 0;
+    /* border: 3px solid purple; */
+}
+
+.mobileNav ul {
+    list-style: none;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobileNav ul li {
+    color: white;
+}
+
+.mobileNav ul li:first-child {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.mobileNav ul li img {
+    height: 40px;
+    width: 195px;
+}
+
+
+/* opening nav */
+.hamburger>input:checked~.mobileNav {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 250px;
+}
+
+
+/* closing nav */
+/* .hamburger .mobileNav:has(ul li input:checked) {
+    display: none;
+} */
+
+
+.mobileNav ul li:nth-child(3),
+.mobileNav ul li:nth-child(4),
+.mobileNav ul li:nth-child(5),
+.mobileNav ul li:nth-child(6),
+.mobileNav ul li:nth-child(7),
+.mobileNav ul li:nth-child(8) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobileNav ul li:nth-child(3) svg,
+.mobileNav ul li:nth-child(4) svg,
+.mobileNav ul li:nth-child(5) svg,
+.mobileNav ul li:nth-child(6) svg,
+.mobileNav ul li:nth-child(7) svg,
+.mobileNav ul li:nth-child(8) svg {
+    margin-right: 20px;
+}
+
+.pages {
+    scroll-snap-type: y mandatory;
+}
+
+/* megasmore mobile */
+
+.megasmore {
+    width: 100vw;
+    height: 101vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.megasmoreTOP {
+    width: 100%;
+    font-family: sans-serif;
+    padding-left: 10px;
+}
+
+
+h2 {
+    font-size: 35px;
+    line-height: 1;
+    letter-spacing: -1px;
+    margin: 0;
+
+}
+
+h2 span {
+    background-color: #fdd000;
+    padding: 0px 5px;
+}
+
+.megasmoreTOP :nth-child(6) {
+    font-size: 14px;
+    color: gray;
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    background-color: #fdd000;
+    font-size: 17px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 3px;
+
+}
+
+.megasmoreBOT {
+    width: 100%;
+    height: 30%;
+}
+
+.smorespics {
+    width: 177px;
+    height: 177px;
+    border-radius: 10px;
+}
+
+.cardsrotation {
+    display: flex;
+    width: 100vw;
+    gap: 10px;
+    overflow: auto;
+    margin: 20px
+}
+
+.cookiefrap,
+.caramelcookiefrap,
+.snowsangriaade {
+    border: gray 1px solid;
+    border-radius: 10px;
+    height: 286px;
+    width: 177px;
+    margin-left: 10px;
+    font-family: sans-serif;
+    overflow-y: clip;
+    margin: 20px 0;
+}
+
+
+.cookiefrap .case :first-child,
+.caramelcookiefrap .case :first-child,
+.snowsangriaade .case :first-child {
+    font-weight: bold;
+    margin: 0;
+    font-size: 15px;
+}
+
+
+.cookiefrap .case :nth-child(2),
+.caramelcookiefrap .case :nth-child(2),
+.snowsangriaade .case :nth-child(2) {
+    margin-top: 10px;
+    font-size: 11px;
+    color: gray;
+}
+
+.case {
+    background-color: lightgray;
+    opacity: .5;
+    padding-bottom: 1vw;
+    padding-left: 1vh;
+    padding-top: 1vw;
+}
+
+.cookiefrap .case :last-child,
+.caramelcookiefrap .case :last-child,
+.snowsangriaade .case :last-child {
+    font-size: 10px;
+}
+
+/* franchise page */
+.franchise {
+    width: 100vw;
+    height: 101vh;
+    background-color: #fdd000;
+    font-family: sans-serif;
+}
+
+.franchise {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.franchisetop h1 {
+    font-size: 35px;
+    line-height: 1;
+    letter-spacing: -1px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.franchisetop h1:nth-child(3):before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background-color: white;
+    height: 50%;
+    width: 92%;
+    padding: 2px 5px;
+    top: 15px;
+    left: -6px;
+}
+
+.franchisetop h1 span {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.franchisetop :first-child {
+    font-weight: lighter;
+    font-size: 17px;
+}
+
+.franchisetop :nth-child(3) {
+    margin-bottom: 10px;
+}
+
+/* white stuff underneath */
+/* .franchisetop :nth-child(3):before {
+    content: '';
+    width: 100%;
+    height: 50%;
+    background: white;
+} */
+
+.franchisetop :last-child {
+    font-size: 13px;
+    font-weight: lighter;
+    text-wrap: wrap;
+}
+
+
+.franchisemiddle {
+    height: 25vh;
+    width: 90vw;
+}
+
+.franchisebot {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.franchisebot button {
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 180px;
+    border-radius: 0;
+}
+
+/* megasize page */
+
+.megasize,
+.megaevent {
+    width: 100vw;
+    height: 101vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 20px;
+    font-family: sans-serif;
+}
+
+.megasizetop {
+    margin-left: 20px;
+}
+
+.megasizetop h1 {
+    font-size: 35px;
+    line-height: 1;
+    letter-spacing: -1px;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+}
+
+.megasizetop h1:nth-child(3):before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background-color: #fdd000;
+    height: 50%;
+    width: 41%;
+    padding: 2px 5px;
+    top: 15px;
+    left: -6px;
+}
+
+.megasizetop>:first-child {
+    font-weight: lighter;
+}
+
+.megasizetop :nth-child(4) {
+    font-size: 15px;
+}
+
+.megasizetop :nth-child(5) {
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.megasizebuttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.megasizebuttons button {
+    background-color: #fdd000;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 2px;
+    width: 20vw;
+    height: 30px;
+}
+
+.megasizebot {
+    height: 30vh;
+    width: 100vw;
+}
+
+.megasizebot img {
+    height: 100%;
+    width: 100%;
+    opacity: .25
+}
+
+/* mega event */
+
+.megaevent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* mega event top */
+
+.megaeventTOP {
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: -1px;
+    margin: 0;
+    text-align: center
+}
+
+.megaeventTOP>h1 {
+    margin-bottom: 0;
+    z-index: 1;
+    position: relative;
+}
+
+.megaeventTOP>h1:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background-color: #fdd000;
+    height: 50%;
+    width: 41%;
+    padding: 2px 5px;
+    top: 42%;
+    left: 26%;
+}
+
+/* mega event middle*/
+
+.megaeventmiddle {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 20px;
+}
+
+[class^='megaeventmiddle'] img {
+    height: 120px;
+    width: 120px;
+    border-radius: 15px 0 0 15px;
+}
+
+[class^='megaeventmiddle']>div {
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 2px 2px 1px lightgray;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    padding: 7px;
+    justify-content: space-between;
+}
+
+.text>p:first-child {
+    font-size: 13px;
+    font-weight: lighter;
+    text-wrap: nowrap;
+}
+
+.text :last-child {
+    font-weight: lighter;
+    font-size: 11px;
+    color: gray;
+}
+
+/* mega event bot */
+
+.megaeventBOT {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.megaeventBOT>p {
+    font-weight: lighter;
+    font-size: 13px;
+
+}
+
+.megaeventBOT>button {
+    color: black;
+    background-color: #fdd000;
+    font-weight: bold;
+    font-size: 15px;
+    height: 37px;
+}
+
+/* mediascreen to change nav background color when 
+the view height changes but not working */
+/* @media screen and (min-height:100vh) {
+    .nav {
+        background-color: white;
+    }
+} */
+
+/* post */
+.threebuttons {
+    display: none;
+    gap: 10px;
+    position: absolute;
+    right: 40px;
+    top: 1px;
+    transform: scale(80%)
+}
+
+.threebuttons div img {
+    width: 100%;
+    transform: scale(80%)
+}
+
+.blog,
+.fb,
+.insta {
+    border: 2px solid;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.middleNav {
+    display: none;
+}
+
+.middleNav ul {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 35%;
+    gap: 50px;
+}
+
+.middleNav ul li {
+    list-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: sans-serif
+}
+
+.blackballs {
+    display: none;
+    position: fixed;
+    right: 2.5%;
+    bottom: 5%;
+}
+
+.blackone,
+.blacktwo,
+.blackthree,
+.blackfour {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 0 0 1px 1px gray;
+}
+
+[class^=black] p:last-child {
+    font-size: 17px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 0 0;
+}
+
+[class^=black] p:first-child {
+    font-size: 13px;
+    font-family: sans-serif;
+    margin: 0 0;
+}
+
+
+@media screen and (min-width:761px) {
+    .mainpage {
+        background: url("https://img.79plus.co.kr/megahp/manager/upload/main/20230913162951_1694590191330_jjbtm1FlRG.jpg?ver=202207071306");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        top: 0px;
+    }
+
+    .threebuttons {
+        display: inline-block
+    }
+
+    .desktopmainpagepics {
+        display: flex;
+    }
+
+    .phonemainpagepics {
+        display: none;
+    }
+
+    .megasmore {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: purple 3px solid;
+        z-index: -5;
+        overflow: hidden;
+    }
+
+    .megasmoreTOP {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin-left: 10%;
+        transform: scale(1.5);
+    }
+
+    .megasmoreBOT {
+        transform: scale(2.5);
+        overflow: auto;
+        height: auto;
+        margin-left: 40%;
+    }
+
+    .cardsrotation {
+        display: flex;
+        width: 100vw;
+        gap: 10px;
+        overflow: auto;
+        margin: 20px;
+    }
+
+    .franchise {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .franchisetop {
+        transform: scale(1.5);
+    }
+
+    .franchisebot {
+        display: none;
+    }
+
+    iframe {
+        width: 35vw;
+        height: 40vh;
+    }
+
+    .franchisemiddle {
+        width: auto;
+        margin-left: 100px;
+        margin-bottom: 100px;
+    }
+
+    .megasize {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .megasizetop {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        justify-content: flex-start;
+        /* align-items: center; */
+        margin-left: 230px;
+        transform: scale(1.3);
+        z-index: 2;
+        /* height: 100vh; */
+    }
+
+    .megasizetop p {
+        text-wrap: wrap;
+        width: 60%;
+    }
+
+    .megasizebuttons {
+        width: 50%
+    }
+
+    .megasizebot img {
+        opacity: 1;
+        background-size: 100%;
+        width: auto;
+        height: 100vh;
+        transform: scale(1.9);
+        position: absolute;
+        top: 0px;
+        left: 75%;
+        z-index: 1;
+        transform: translate(-30%);
+        background-size: 200%
+    }
+
+    .megaeventTOP {
+        display: none;
+    }
+
+    .megaeventmiddle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    [class^='megaeventmiddle'] img {
+        height: 300px;
+        width: 300px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    [class^='megaeventmiddle'] img:hover {
+        animation: .5s alternate bounce;
+    }
+
+    [class^='megaeventmiddle']>div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0 2px 2px 1px lightgray;
+        border-radius: 15px;
+        overflow: hidden;
+
+    }
+}
+
+@media screen and (min-width:1281px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav {
+        background-color: transparent;
+    }
+
+    .threebuttons {
+        top: 0px;
+        right: 0px;
+        position: fixed;
+    }
+
+    .middleNav {
+        display: block
+    }
+
+    .blackballs {
+        display: block;
+        z-index: 999
+    }
+}
+
+@keyframes bounce {
+    to {
+        transform: scale(1.2)
+    }
+}

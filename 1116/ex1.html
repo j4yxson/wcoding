@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 1</title>
+</head>
+
+<body>
+    <h1>Exercise 1</h1>
+    <script type="text/javascript">
+        let var1 = 18;
+        let var2 = 27;
+        let var3 = 3;
+        let exo1 = var1 + var2 + var3;
+        // Create 3 variables containing 18, 27 and 3
+        // addtions them and put the result into the exo1 variable
+        exo1 += 1;
+        console.log(exo1);
+
+        // Increase the value of the variable exo1 by one
+        // console.log((exo1 +=))
+
+        // Create 2 variable containing "Hello" and " guys"
+        // then concatenate the two string together and put the result into the exo2 variable
+
+        let strvar1 = "Hello";
+        let strvar2 = " guys";
+        let exo2 = strvar1 + strvar2;
+        console.log(exo2);
+
+        // Create a new constant variable containing the number of student in the class
+        // Update the variable exo2 so it say: "Hello guys we are {number of student} in this class" and replace
+        // {number of student} by the content of the variable just declared
+        const numberinclass = 6;
+        exo2 = exo2 + ' we are ' + numberinclass + ' in this class';
+        console.log(exo2);
+
+        let exo3 = 'test';
+        console.log(exo3);
+        // Create a constant with a value of null
+
+        const valnull = null
+        // Try to add the variable with other datatype (number, string, boolean, etc)
+
+        valnull + 1;
+        valnull + "addhere";
+        valnull + true;
+
+        // Create new variables containing the result of these arithmetical operations:
+        // The result of the addition of 17 and 7 multiplied by 6 divided by 4 minus 2
+
+        let result1 = ((17 + 7) * (6 / 4)) - 2;
+        console.log(result1)
+
+        // The result of the multiplication of 13.32 and 182.11 minus 17.2 divided by 3
+
+        let result2 = ((13.32 * 182.11) - 17.2) / 3;
+        console.log(result2)
+        // The result of the first calculation divided by the second one
+
+        let result3 = result1 / result2
+        console.log(result3)
+        // The result of the third calculation minus 400;
+
+        let result4 = result3 - 400;
+        console.log(result4)
+        // The result of the last calculation should be console logged with the given message: "The result is: {result of the last calcul}"
+
+        let result5 = 'The result is: ' + result4;
+        console.log(result5)
+
+        // BONUS
+        // Create a if condition and display a message if the number of the variable exo1 is bigger than 10
+        // Otherwise display an other message
+
+        if (exo1 > 10) {
+            console.log(true);
+        }
+        else {
+            console.log("other");
+        }
+
+
+
+        // can use switch (true) for ranges because now evaluating for if the expression is true
+
+        // Create a switch condition that will return the number of day in a given month
+        const month = prompt("Type in a month");
+        switch (month) {
+            case 'January':
+                console.log("31 days");
+                break;
+            case 'February':
+                console.log("28 days");
+                break;
+            case 'March':
+                console.log("31 days");
+                break;
+            case 'April':
+                console.log("30 days");
+                break;
+            case 'May':
+                console.log("31 days");
+                break;
+            case 'June':
+                console.log("31 days");
+                break;
+            case 'July':
+                console.log("30 days");
+                break;
+            case 'August':
+                console.log("31 days");
+                break;
+            case 'September':
+                console.log("30 days");
+                break;
+            case 'October':
+                console.log("31 days");
+                break;
+            case 'November':
+                console.log("30 days");
+                break;
+            case 'December':
+                console.log("31 days");
+                break;
+            default:
+                console.log("input a month")
+        }
+        // Create a switch that will do a calculation between two variable for a given operator
+
+        // const variable1 = prompt("enter first variable");
+        // const variable2 = prompt("enter second variable");
+        // const op1 = prompt("enter operator");
+
+        // switch (variable1)
+    </script>
+</body>
+
+</html>
