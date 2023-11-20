@@ -91,51 +91,34 @@
         const month = prompt("Type in a month");
         switch (month) {
             case 'January':
+            case 'March':
+            case 'May':
+            case 'July':
+            case 'August':
+            case 'October':
+            case 'December':
                 console.log("31 days");
                 break;
             case 'February':
                 console.log("28 days");
                 break;
-            case 'March':
-                console.log("31 days");
-                break;
             case 'April':
-                console.log("30 days");
-                break;
-            case 'May':
-                console.log("31 days");
-                break;
             case 'June':
-                console.log("31 days");
-                break;
-            case 'July':
-                console.log("30 days");
-                break;
-            case 'August':
-                console.log("31 days");
-                break;
             case 'September':
-                console.log("30 days");
-                break;
-            case 'October':
-                console.log("31 days");
-                break;
             case 'November':
                 console.log("30 days");
-                break;
-            case 'December':
-                console.log("31 days");
                 break;
             default:
                 console.log("input a month")
         }
         // Create a switch that will do a calculation between two variable for a given operator
 
-        // const variable1 = prompt("enter first variable");
-        // const variable2 = prompt("enter second variable");
-        // const op1 = prompt("enter operator");
+        const operUno = Math.ceil(Math.random() * 10)
+        const operDos = Math.ceil(Math.random() * 10)
 
-        // switch (variable1)
+        const operUser = prompt("enter an operation")
+
+        console.log(`${operUno} ${operUser} ${operDos}`)
     </script>
 </body>
 

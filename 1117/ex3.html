@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // general syntax
+        // while loop
+        // while (condition) statement;
+
+        // while (condition) {
+        //     statement1;
+        //     statement2;
+        // }
+
+        // let idx = 0;
+        // while (idx < 10) {
+        //     console.log(idx);
+        //     idx += 1;
+        // }
+
+        // do while loop
+
+        // do {
+        // statement1;
+        // statement2; 
+        // } while (condition);
+
+        // let idx1 = 0;
+        // do {
+        //     console.log(idx);
+        //     idx++;
+        // }
+        // while (idx1 > 10);
+
+        // for loop
+        // for(execute before loop; test at beginning of loop; execute at end of loop) statement;
+        // for (initialize iterator; condition; increment iterator) statemnet; 
+        // for (init iter; condition; change iter) {
+        // statement1; 
+        // statement 2;
+        // }
+
+        // for (let idx = 0; idx < 10; idx += 1) {
+        //     console.log(idx);
+        // }
+
+        // while loop is better for indeterminate
+        // let username = prompt("say my name");
+        // while (username !== "jason") {
+        //     username = prompt("say my name)");
+        // }
+
+        // for loop with same code, not as pretty/concise as above while loop
+        // for (let username = prompt("say my name"); username !== "jason"; username = prompt("say my name"));
+
+        // let numbr = 0;
+        // while (numbr < 100) {
+        //     if (numbr == 5) continue; // this will skip the rest of the code below and retests
+        //     console.log("so far: ", numbr);
+        //     if (numbr == 10) break; // break ends loop prematurely
+        //     numbr += 1;
+        // }
+
+        // continues : will skip rest of code in whiles/do whiles but in fors, will do the last portion after the semi colon
+
+        for (let x = 0; x < 10; x++) {
+            for (let y = 0; y < 10; y++) {
+                console.log("you are at [", x, "][", y, "]");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

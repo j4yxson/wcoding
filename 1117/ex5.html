@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ** Question 1:** Write a while loop that repeats 10 times.
+        // let i = 0
+        // while (i < 10) {
+        //     console.log(i);
+        //     i++;
+        // }
+
+        // ** Question 2:** Write a do while loop that repeats 7 times.
+        // let a = 0;
+        // do {
+        //     console.log(a);
+        //     a++;
+        // }
+        // while (a < 7);
+
+
+        // ** Question 3:** Write a while loop that repeats until the user enters a value via a prompt.In other words, a prompt is displayed each time the loop is executed.If the user enters something(anything!), the loop stops, and an alert displays the value entered in the prompt.If clicks Cancel or does not enter any text, the loop continues and displays the prompt again.
+
+        // let str = prompt("enter any text");
+        // while (str === "" || str === undefined || str === null) {
+        //     str = prompt("PLEASE");
+        //     console.log(str);
+        // }
+
+        // ** Question 4:** Write a for loop that repeats 3 times, asking the user to enter a number each time.Add the number that they enter each time into a total.At the end, alert the one of the predefined ranges that their final total falls within.
+
+        //             Explanation :
+
+        // During 3 loops, display to the user a message and ask them to enter a number between 1 and 10.
+
+        // Loop 1 : “Your number now equals < value number >
+
+        //             Loops 2 and 3 : “You can add a number between 1 and 10 to this number.Choose a number to add: “
+
+        // When the loops ends, display one of the following to the user, depending on their final total:
+
+        //         "The total was between [1-10]"
+
+        //         "The total was between [11-20]"
+
+        //         "The total was between [21-30]"
+
+        // let i = 1;
+        // while (i < 4) {
+        //     if (i == 1) {
+        //         num1 = parseInt(prompt("Enter first number between 1 and 10"));
+        //         console.log("Your number now equals: " + num1);
+        //     }
+        //     else if (i == 2) {
+        //         num2 = parseInt(prompt("You can add a number between 1 and 10 to this number.Choose a number to add:"));
+        //         console.log(num2);
+        //     }
+        //     else if (i == 3) {
+        //         num3 = parseInt(prompt("You can add a number between 1 and 10 to this number.Choose a number to add:"));
+        //         console.log(num3);
+        //         if (num1 + num2 + num3 <= 10) {
+        //             console.log("The total was between [1-10]");
+        //         }
+        //         else if ((num1 + num2 + num3 > 10) && (num1 + num2 + num3 <= 20)) {
+        //             console.log("The total was between [11-20]");
+        //         }
+        //         else if (num1 + num2 + num3 > 20) {
+        //             console.log("The total was between [21-30]");
+        //         }
+        //     }
+        //     i++;
+        // }
+
+        // for (i = 1; i < 4; i++) {
+        //     if (i == 1) {
+        //         num1 = parseInt(prompt("Enter first number between 1 and 10"));
+        //         console.log("Your number now equals: " + num1);
+        //     }
+        //     else if (i == 2) {
+        //         num2 = parseInt(prompt("You can add a number between 1 and 10 to this number.Choose a number to add:"));
+        //         console.log(num2);
+        //     }
+        //     else if (i == 3) {
+        //         num3 = parseInt(prompt("You can add a number between 1 and 10 to this number.Choose a number to add:"));
+        //         console.log(num3);
+        //         if (num1 + num2 + num3 <= 10) {
+        //             console.log("The total was between [1-10]");
+        //         }
+        //         else if ((num1 + num2 + num3 > 10) && (num1 + num2 + num3 <= 20)) {
+        //             console.log("The total was between [11-20]");
+        //         }
+        //         else if (num1 + num2 + num3 > 20) {
+        //             console.log("The total was between [21-30]");
+        //         }
+        //     }
+        // }
+
+        // ** Question 5:** Display all the numbers divisible by 3 AND all the numbers divisible by 5, up to 1000.
+
+        //         Example: 3, 5, 6, 9, 10, etc…
+
+        // for (let i = 0; i < 1000; i += 1) {
+        //     if (i % 3 === 0 || i % 5 === 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+        // ** Question 6:** Using the function console.log(), display the total amount of numbers divisible by 3 OR divisible by 5 from 1 to 1000.
+        // let count = 0;
+        // for (let i = 0; i < 1000; i += 1) {
+        //     if (i % 3 === 0 || i % 5 === 0) {
+        //         count++;
+        //         console.log(count);
+        //     }
+        // }
+
+
+        // ** Question 7:** Display all the numbers divisible by BOTH 3 AND 5 until 1000.
+
+        //         Example: 15, 30, 45, 60, etc…
+
+        // for (let i = 0; i < 1000; i += 1) {
+        //     if (i % 3 === 0 && i % 5 === 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+        // ** Question 8:** Display all the prime numbers until 1000.
+        // 2,3,5,7,11,13,17,19
+
+        for (i = 2; i < 1000; i++) {
+            let isPrime = true;
+            for (let a = 2; a < i; a++) {
+                if (i % a === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                console.log(i);
+            }
+        }
+
+
+    </script>
+    <h1>hellooo</h1>
+</body>
+
+</html>

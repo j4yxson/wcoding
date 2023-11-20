@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // Show in the console every value between 1 and 50 (1, 2, 3, 4, 5, 6...)
+
+        // for (let i=1; i<=50;++i) {
+        //     console.log(i);
+        // }
+
+        // Show every odd number between 1 and 70 (1, 3, 5, 7, 9, 11...)
+
+        // for (let a = 1; a < 70; a++) {
+        //     if (a % 2) {console.log(a)};
+        // }
+
+        // Show every multiple of 12 between 200 and 0. (192, 180, 168...)
+
+        // for (let b = 0; b < 200; b+=12) {
+        //     console.log(b);
+        // }
+
+        // Update a string by adding a new letter to it 10 times ("Hello" => "Hellooooooooooo")
+        // let hello = "Hello";
+        // for (let letter = 1; letter < 10; letter++) {
+        //     console.log(hello);
+        //     hello = hello + "o";
+        // hello = hello.concat("o")
+        // }
+
+        //BONUS:
+        // Reverse a string while using a loop ("Hello" => "olleH")
+
+        // let str = prompt("whatever word you type, will be reversed");
+
+        // let reversedstring = "";
+
+        // for (let i = 0; i < str.length; i++) {
+        //     reversedstring[i] = str[(str.length - i - 1)];
+        //     reversedstring = reversedstring.concat(reversedstring[i] = str[(str.length - i - 1)]);
+        //     if (i == str.length - 1) {
+        //         console.log(reversedstring);
+        //     }
+        // }
+
+        // for (let i = 0; i < str.length; i++) {
+        //     reversedstring = str[i] + reversedstring;
+        // }
+
+        // for (let i= str.length - 1; i>=0; i--) {
+        //     reversedstring += str[i];
+        // }
+
+        // console.log(reversedstring);
+
+        // Show the first 20 numbers of the fibonacci sequence with a loop
+        // (10 first numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34)
+
+        let x = parseInt(prompt("give me a number"));
+        let y = parseInt(prompt("give me a larger second number"));
+        var array1 = [x, y]
+
+
+        for (i = 2; i < 20; i++) {
+            array1.push((array1[i - 2] + array1[i - 1]));
+        }
+        console.log(array1);
+
+    </script>
+</body>
+
+</html>
