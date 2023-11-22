@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Array</title>
+</head>
+
+<body>
+  <h3>Array Loop exercises</h3>
+  <!-- <script src="letters.js"></script> -->
+  <script src="people.js"></script>
+  <script type="text/javascript">
+    // Create an array and put these colors in it:
+    // fuchsia, lime, grey, magenta, teal
+    let allColors = ["fuschia", "lime", "grey", "magenta", "teal"];
+    // let outputStr = "";
+    // for (let i = 0; i < allColors.length; i++) outputStr += allColors[i] + ", ";
+    // console.log("START:", outputStr);
+    console.log("START:", allColors.join(", "));
+
+    // Use array functions to remove the 3 last colors and add 2 new colors at the beginning of the array
+    // allColors.pop();
+    // allColors.pop();
+    // allColors.pop();
+    // console.log("POST POPS:", allColors.join(", "));
+
+    // allColors = allColors.slice(0, 2);
+    // console.log("POST SLICE:", allColors.join(", "));
+
+    allColors.splice(2);
+    console.log("POST SPLICE:", allColors.join(", "));
+
+    // allColors.unshift("periwinkle");
+    // allColors.unshift("seafoam-green");
+    // console.log("POST UNSHIFT:", allColors.join(", "));
+
+    // allColors.splice(0, 0, "periwinkle", "seafoam-green");
+    // console.log("POST SPLICE:", allColors.join(", "));
+
+    // Reverse this array
+    // const greetings = ["H", "e", "l", "l", "o", " ", "g", "u", "y", "s"];
+    // greetings.reverse();
+    // console.log("REVERSED:", greetings);
+
+    // Find all vowels in the lotsOfLetters array provided in the letter.js file and extract them into another array.
+    // let newVowels = [];
+    // let allVowels = ['a', 'e', 'i', 'o', 'u'];
+    // for (let i = 0; i < lotsOfLetters.length; i++) {
+    //   const currLetter = lotsOfLetters[i];
+
+    // if (currLetter === 'a'
+    //   || currLetter === 'e'
+    //   || currLetter === 'i'
+    //   || currLetter === 'o'
+    //   || currLetter === 'u'
+    // ) {
+    //   newVowels.push(currLetter);
+    // }
+
+    // for (let k = 0; k < allVowels.length; k++) {
+    //   const currVowel = allVowels[k];
+
+    //   if (currLetter === currVowel) {
+    //     newVowels.push(currLetter);
+    //   }
+    // }
+
+    // if (allVowels.indexOf(currLetter) !== -1) {
+    //   newVowels.push(currLetter);
+    // }
+
+    //   if (allVowels.includes(currLetter)) {
+    //     newVowels.push(currLetter);
+    //   }
+    // }
+    // console.log("VOWELS ONLY:", newVowels.join(", "));
+
+    // Remove every "z" in the lotsOfLetters array
+    // let noZs = [];
+    // for (let i = 0; i < lotsOfLetters.length; i++) {
+    //   const currLetter = lotsOfLetters[i];
+    //   if (currLetter !== 'z') {
+    //     noZs.push(currLetter);
+    //   }
+    // }
+    // console.log("NO Z:", noZs);
+
+    // for (let i in lotsOfLetters.length - 1) {
+    // for (let i = lotsOfLetters.length - 1; i >= 0; i--) {
+    //   if (lotsOfLetters[i] === 'z') {
+    //     lotsOfLetters.splice(i, 1);
+    //   }
+    // }
+    // console.log("POST SPLICE:", lotsOfLetters);
+
+    // lotsOfLetters.sort();
+    // let posOfZ = lotsOfLetters.indexOf('z');
+    // let noZs2 = lotsOfLetters.slice(0, posOfZ);
+    // console.log("NO Z2:", noZs2);
+
+
+    // Display all the data in the given array in the following format:
+    // "Chris" 19
+    // "Georges" 33
+    // ...
+    const kids = [
+      ["Chris", 19],
+      ["Georges", 33],
+      ["Dustin", 29],
+      ["Wendy", 35],
+    ];
+    // kids.what = "dude";
+    // console.log("KIDS:", kids);
+
+    // for (let i in kids) {
+    //   console.log("The I:", i);
+    // }
+    // for (const i of kids.keys()) {
+    //   console.log("The I:", i);
+    // }
+    // for (const v of kids.values()) {
+    //   console.log("The V:", v);
+    // }
+    // for (const [i, v] of kids.entries()) {
+    //   console.log("The things:", i, v);
+    // }
+
+    for (const v of kids) {
+      // console.log("The V:", v);
+      // const newStr = v.join(" ");
+      // console.log(newStr);
+      // console.log('"' + v[0] + '" ' + v[1]);
+      console.log(`"${v[0]}" ${v[1]}`);
+    }
+
+    // BONUS:
+    // In the lotsOfPeople array provided in the people.js file:
+    // - Count how many people have a name starting with the letter "E"
+    // - Count how many people are over 50 years old
+    // - Remove the people under 21 from the array
+
+    // eName = 0;
+    // for (i = 0; i < lotsOfPeople.length; i++) {
+    //   if (lotsOfPeople[i][0][0] === "E") {
+    //     eName += 1;
+    //   }
+    // }
+    // console.log(eName);
+
+    // oldHeads = 0;
+    // for (i = 0; i < lotsOfPeople.length; i++) {
+    //   if (lotsOfPeople[i][1] > 50) {
+    //     oldHeads += 1;
+    //   }
+    // }
+    // console.log(oldHeads);
+
+    // for (i = lotsOfPeople.length - 1; i >= 0; i--) {
+    //   if (lotsOfPeople[i][1] < 21) {
+    //     lotsOfPeople.splice(i, 1);
+    //   }
+    // }
+    // console.log(lotsOfPeople);
+
+  </script>
+</body>
+
+</html>

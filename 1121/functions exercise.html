@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+
+</head>
+
+<body>
+    <h1>hello?</h1>
+    <script src="letters.js"></script>
+    <script src="people.js"></script>
+    <script>
+        // Create a function that says hello to the person name provided as an argument.
+
+        // function greeting(name) {
+        //     return alert("Hello, " + name);
+        // }
+
+        // greeting("Jason");
+
+        // Create a function that will tell you if a provided year is a leap year or not.
+        // A year is a leap year if it is divisible by 4 but not 100, or else is divisible by 400.
+
+        // function leapyear(year) {
+        //     if (year % 400 === 0) {
+        //         return alert(year + " is a leap year");
+        //     }
+        //     else alert(year + " is not a leap year");
+        // }
+
+        // leapyear(2000);
+
+        // Create a function that will return all the vowels in an array of letters. It should return the vowels found as a new array.
+        // Use the lotsOfLetters array from the provided letters.js file.
+
+        // vowels = ["a", "e", "i", "o", "u"];
+        // vowelsOnlyArr = [];
+
+        // function vowelsOnly(arr1) {
+        //     for (i = 0; i < arr1.length; i++) {
+        //         for (a = 0; a < vowels.length; a++) {
+        //             if (vowels[a] === arr1[i]) {
+        //                 vowelsOnlyArr.push(arr1[i]);
+        //             }
+        //         }
+        //     }
+        //     console.log(vowelsOnlyArr);
+        // }
+
+        // vowelsOnly(lotsOfLetters);
+
+        // Create a function that takes an array of people, and a name and will return back the age of that person.
+        // Use the lotsOfPeople array from the provided people.js file.
+        // function nametoAge(array1, name1) {
+        //     for (i = 0; i < array1.length; i++) {
+        //         if (array1[i][0] === name1)
+        //             console.log(array1[i][1]);
+        //     }
+        // }
+        // nametoAge(lotsOfPeople, "Irwin");
+
+        // Create a function that take an array of people, a name, and a age and will add a new person into the lotsOfPeople array.
+        // Use the lotsOfPeople array from the provided people.js file.
+        // function addPeople(arr2, name2, age2) {
+        //     newArray = [name2, age2];
+        //     arr2.push(newArray);
+        // }
+
+        // addPeople(lotsOfPeople, "Jason", 25);
+
+
+        // BONUS:
+        // Create a function that takes two arguments: an array of numbers and a multiplier.
+        // The function should update the array with each number multiplied by the multiplier parameter.
+        // Ex : [2,5,1,10] with multiplier 2 should update the array to [4,10,2,20]
+
+        // ask about "let"
+        // let testarray = [2, 5, 1, 10];
+
+        // function multiplyarray(array3, multiplier3) {
+        //     for (let i = 0; i < array3.length; i++) {
+        //         array3[i] *= multiplier3;
+        //     }
+        // }
+
+        // multiplyarray(testarray, 2);
+        // console.log(testarray);
+
+
+        // Do the previous exercise again, but this time the array passed in should not be changed by the function. Instead, return a new array.
+
+        // let newArray = [];
+        // let testarray = [2, 5, 1, 10];
+
+        // function multiplyarray(array3, multiplier3) {
+        //     for (let i = 0; i < array3.length; i++) {
+        //         newArray.push(array3[i] *= multiplier3);
+        //     }
+        //     return console.log("my new array: " + newArray);
+        // }
+
+        // multiplyarray(testarray, 2);
+        // console.log("my old array: " + testarray);
+
+        // Create a function that will sort an array of people so the people are ordered by their name in alphabetical order.
+        // Use the lotsOfPeople array from the provided people.js file.
+        // Ex: [["Carolina", 28], ["Alex", 18], ["Georges", 31], ["Betty", 64]]
+        // becomes
+        // [["Alex", 18], ["Betty", 64], ["Carolina", 28], ["Georges", 31]]
+
+        // let testarray =
+        //     [["Asia", 70],
+        //     ["Blaze", 38],
+        //     ["Norma", 71],
+        //     ["Pink", 13],];
+        // function orderFirstName(array6) {
+        //     array6.sort();
+        // }
+
+        // orderFirstName(lotsOfPeople);
+        // console.log(lotsOfPeople);
+    </script>
+</body>
+
+</html>
