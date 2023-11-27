@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generators and Recursion</title>
+</head>
+
+<body>
+    <script>
+        // Generator function for leap years starting from the year 4 AD
+        function* leapYearGenerator() {
+            let year = 4;
+
+            while (true) {
+                if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+                    yield year;
+                }
+
+                year++;
+            }
+        }
+
+        // Get the next 5 leap years starting from the 490th leap year
+        function getLeapYears(startingLeapYear, count) {
+            const generator = leapYearGenerator();
+            let leapYears = [];
+
+            for (let i = 0; i < startingLeapYear; i++) {
+                generator.next(); // Move the generator to the startingLeapYear
+            }
+
+            for (let i = 0; i < count; i++) {
+                leapYears.push(generator.next().value);
+            }
+
+            return leapYears;
+        }
+
+        const startingLeapYear = 490;
+        const numberOfLeapYears = 5;
+        const result = getLeapYears(startingLeapYear, numberOfLeapYears);
+        console.log(result);
+
+    </script>
+
+
+    <pre>
+1. Create a generator that returns leap years, starting with the year 4 AD. Then use that generator to get 5 leap years, starting with the 490th leap year.
+
+2. Create a generator that will return the following values:
+    "child"
+    "frog"
+    "bear"
+    "weasel"
+
+    Then, use a recursive function to the previous generator to create the following output:
+
+    "Once upon a time, there was a little child who couldn't sleep,
+    so her mother told a story about a little frog who couldn't sleep,
+    so the frog's mother told a story about a little bear who couldn't sleep,
+    so bear's mother told a story about a little weasel who couldn't sleep,
+    ...and the little bear fell asleep;
+    ...and the little frog fell asleep;
+    ...and the little child finally fell asleep."
+
+BONUS:
+    Create a function that will execute a binary search on the lotsOfPeople array from people.js for a given name, using recursion.
+    
+    The function should print out the checks it took to find the person and finally return their age, or "NOT FOUND" if the name does not exist in the array.
+
+    A binary search definition from Wiki (read carefully):
+    "Binary search works on sorted arrays. Binary search begins by comparing an element in the middle of the array with the target value. If the target value matches the element, its position in the array is returned. If the target value is less than the element, the search continues in the lower half of the array. If the target value is greater than the element, the search continues in the upper half of the array. By doing this, the algorithm eliminates the half in which the target value cannot lie in each iteration."
+
+    Hint: You can use "<" and ">" to compare strings (eg. "aaa" < "aab").
+
+    Example Output:
+    console.log("Dawson:", findInPeople("Dawson"));
+    > Checking: Jovan
+    > Checking: Elenor
+    > Checking: Bonita
+    > Checking: Darren
+    > Checking: Demario
+    > Checking: Dawson
+    > Dawson: 32
+
+    console.log("Madie:", findInPeople("Madie"));
+    > Checking: Jovan
+    > Checking: Paige
+    > Checking: Lyric
+    > Checking: Murray
+    > Checking: Mathilde
+    > Checking: Mariela
+    > Checking: Malcolm
+    > Checking: Madie
+    > Madie: 33
+
+    console.log("Abraham:", findInPeople("Abraham"));
+    > Checking: Jovan
+    > Checking: Elenor
+    > Checking: Bonita
+    > Checking: Arthur
+    > Checking: Alexandra
+    > Checking: Alberto
+    > Checking: Al
+    > Checking: Abraham
+    > Abraham: 36
+
+    console.log("Yadira:", findInPeople("Yadira"));
+    > Checking: Jovan
+    > Checking: Paige
+    > Checking: Savanna
+    > Checking: Tristian
+    > Checking: Vita
+    > Checking: Willis
+    > Checking: Yadira
+    > Yadira: 55
+
+    console.log("Bisque:", findInPeople("Bisque"));
+    > Checking: Jovan
+    > Checking: Elenor
+    > Checking: Bonita
+    > Checking: Arthur
+    > Checking: Bernard
+    > Checking: Blake
+    > Checking: Betsy
+    > Bisque: NOT FOUND
+    </pre>
+</body>
+
+</html>

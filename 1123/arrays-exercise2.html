@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays2</title>
+</head>
+
+<body>
+    <script>
+        // Here are the temperatures for each day in May, in degrees Fahrenheit.
+        const mayTemps = [
+            [86, 78, 85, 79, 86, 78, 80],
+            [84, 82, 74, 85, 83, 82, 79],
+            [76, 79, 80, 81, 82, 81, 78],
+            [77, 79, 83, 84, 85, 80, 78],
+            [83, 81, 78]
+        ];
+
+        // Create a function that returns the temperature for a given day (1-31)
+        // tempOfDay = [];
+        // function findTemp(day, tempsOfMonths) {
+        //     if (day < 8) {
+        //         tempOfDay = tempsOfMonths[0][day - 1];
+        //         console.log(tempOfDay);
+        //     }
+        //     else if (day >= 8 && day < 15) {
+        //         tempOfDay = tempsOfMonths[1][day - 8];
+        //         console.log(tempOfDay);
+        //     }
+        //     else if (day >= 15 && day < 22) {
+        //         tempOfDay = tempsOfMonths[2][day - 15];
+        //         console.log(tempOfDay);
+        //     }
+        //     else if (day >= 22 && day < 29) {
+        //         tempOfDay = tempsOfMonths[3][day - 22];
+        //         console.log(tempOfDay);
+        //     }
+        //     else if (day > 29) {
+        //         tempOfDay = tempsOfMonths[4][day - 29];
+        //         console.log(tempOfDay);
+        //     };
+        // }
+        // findTemp(18, mayTemps);
+
+        // Create a function that returns an array that contains the lowest temp, highest temp, and average temp for the month. (eg. [54, 66, 58])
+
+        // function compareNumbersLtH(a, b) {
+        //     return a - b;
+        // }
+
+        // let highestTemps = [];
+        // let lowestTemps = [];
+        // let averageTemps = [];
+        // let finalArray = [];
+        // function arrayTempRanges(tempsOfMonths) {
+        //     for (let i = 0; i < tempsOfMonths.length; i++) {
+        //         tempsOfMonths[i].sort(compareNumbersLtH); // sorting mayTemps individual array from Low to High;
+
+        //         let lows = tempsOfMonths[i][0]; // assigning the first position in i week to var lows
+        //         lowestTemps.push(lows); // pushing lowest temperatures from each week into lowest temps array
+        //         lowestTemps.sort(compareNumbersLtH); // resorting lowestTemps array to get lowest temperature in first position
+
+        //         let highs = tempsOfMonths[i][tempsOfMonths[i].length - 1];
+        //         highestTemps.push(highs); // pushing highest temperatures into highest temps array
+        //         highestTemps.sort(compareNumbersLtH);
+        //
+        //     }
+        // tempsOfMonths.flat();
+
+
+        //     finalArray.push(lowestTemps[0]); // pushing lowest temperature (now at first position);
+        //     finalArray.push(highestTemps[highestTemps.length - 1]);
+        //     console.log(finalArray);
+        // }
+
+        // arrayTempRanges(mayTemps);
+
+
+
+        // Create a function that return the average temperature for a given week (1-5).
+        // const janTemps = [
+        //     [86, 78, 85, 79, 86, 78, 80],
+        //     [84, 82, 74, 85, 83, 82, 79],
+        //     [76, 79, 80, 81, 82, 81, 78],
+        //     [77, 79, 83, 84, 85, 80, 78],
+        //     [83, 81, 78]
+        // ];
+
+        // initialValue = 0;
+        // function avgTemps(week, tempsOfMonths) {
+        //     for (i = 0; i <= tempsOfMonths[i].length; i++) {
+        //         sum = tempsOfMonths[week].reduce((accumulator, currentValue) => accumulator + currentValue, initialValue,);
+        //         average = (sum / tempsOfMonths[week].length)
+        //     }
+        //     console.log(Math.ceil(average));
+        // }
+
+        // avgTemps(3, janTemps);
+
+
+        // Create a function that returns the average temperature for a given day of the week ("M", "T", "W", "Th", "F", "S", "Su").
+
+        // const marTemps = [
+        //     [86, 78, 85, 79, 86, 78, 80],
+        //     [84, 82, 74, 85, 83, 82, 79],
+        //     [76, 79, 80, 81, 82, 81, 78],
+        //     [77, 79, 83, 84, 85, 80, 78],
+        //     [83, 81, 78]
+        // ];
+        // let monday = [];
+        // let tuesday = [];
+        // let wednesday = [];
+        // let thursday = [];
+        // let friday = [];
+        // let saturday = [];
+        // let sunday = [];
+        // function avgDayTemp(day, tempsOfMonths) {
+        //     if (day == "M") {
+        //         for (i = 0; i < tempsOfMonths.length; i++) {
+        //             monday.push(tempsOfMonths[i][0]);
+        //         }
+        //         let sum = monday.reduce((partialSum, a) => partialSum + a, 0);
+        //         average = sum / 5;
+        //         console.log(average)
+        //     }
+        //     else if (day == "T") {
+        //         for (i = 0; i < tempsOfMonths.length; i++) {
+        //             tuesday.push(tempsOfMonths[i][1]);
+        //         }
+        //         let sum = tuesday.reduce((partialSum, a) => partialSum + a, 0);
+        //         average = sum / 5;
+        //         console.log(average)
+        //     }
+        //     else if (day == "W") {
+        //         for (i = 0; i < tempsOfMonths.length; i++) {
+        //             wednesday.push(tempsOfMonths[i][2]);
+        //         }
+        //         let sum = wednesday.reduce((partialSum, a) => partialSum + a, 0);
+        //         average = sum / 5;
+        //         console.log(average)
+        //     }
+        //     else if (day == "Th") {
+        //         for (i = 0; i < 4; i++) {
+        //             thursday.push(tempsOfMonths[i][3]);
+        //         }
+        //         let sum = thursday.reduce((partialSum, a) => partialSum + a, 0);
+        //         let average = sum / 4;
+        //         console.log(average)
+        //     }
+        //     else if (day == "F") {
+        //         for (i = 0; i < 4; i++) {
+        //             friday.push(tempsOfMonths[i][4]);
+        //         }
+        //         let sum = friday.reduce((partialSum, a) => partialSum + a, 0);
+        //         let average = sum / 4;
+        //         console.log(average)
+        //     }
+        //     else if (day == "S") {
+        //         for (i = 0; i < 4; i++) {
+        //             saturday.push(tempsOfMonths[i][5]);
+        //         }
+        //         let sum = saturday.reduce((partialSum, a) => partialSum + a, 0);
+        //         average = sum / 4;
+        //         console.log(average)
+        //     }
+        //     else if (day == "Su") {
+        //         for (i = 0; i < 4; i++) {
+        //             sunday.push(tempsOfMonths[i][6]);
+        //         }
+        //         let sum = sunday.reduce((partialSum, a) => partialSum + a, 0);
+        //         average = sum / 4;
+        //         console.log(average)
+        //     }
+        // }
+
+
+        // avgDayTemp("Su", marTemps);
+
+        // Create a function that returns a new data set with the temperatures converted to Celsius.
+        // C = (F-32)/(5/9)
+
+        // const juneTemps = [
+        //     [86, 78, 85, 79, 86, 78, 80],
+        //     [84, 82, 74, 85, 83, 82, 79],
+        //     [76, 79, 80, 81, 82, 81, 78],
+        //     [77, 79, 83, 84, 85, 80, 78],
+        //     [83, 81, 78]
+        // ];
+
+        // function toFahrenheit(tempsOfMonths) {
+        //     fArray = tempsOfMonths.flat();
+        //     console.log(fArray.map((x) => ((x - 32) * (5 / 9))));
+        // }
+
+        // // console.log(juneTemps.flat());
+        // toFahrenheit(juneTemps);
+
+
+
+        // Create a function that prints out the mode and median temperatures for the month.
+
+        // const julyTemps = [
+        //     [86, 78, 85, 79, 86, 78, 80],
+        //     [84, 82, 74, 85, 83, 82, 79],
+        //     [76, 79, 80, 81, 82, 81, 78],
+        //     [77, 79, 83, 84, 85, 80, 78],
+        //     [83, 81, 78]
+        // ];
+        // let dupArray = [];
+        // let modeMedianArray = [];
+        // count = 0;
+
+        // function modeMedian(tempsOfMonths) {
+        //     flatArray = tempsOfMonths.flat(); //flattening array
+        //     flatArray.sort(); //sorting array
+
+        //     // median
+        //     median = flatArray[Math.floor((flatArray.length) / 2)];
+        //     modeMedianArray.push(median);
+        //     console.log(modeMedianArray);
+
+        //     // mode
+        //     for (i = 0; i < flatArray.length; i++) {
+        //         // if (flatArray[i] == flatArray[i + 1]) {
+        //         //     dupArray.push(flatArray[i]);
+        //         // }
+        //         // else if (flatArray[i] !== flatArray[i + 1]) {
+        //         //     continue;
+        //         // }
+
+        //         if (flatArray[i] !== flatArray[i + 1]) {
+        //             flatArray.splice(i, 1, "");
+        //             flatArray[i] = flatArray[i + 1];
+        //         }
+        //     }
+        //     console.log(flatArray);
+        // }
+        // modeMedian(julyTemps);
+        // console.log(flatArray);
+
+        // Mode: The mode is the value that appears most frequently in a data set.
+        // Median: The median is the middle value of a data set, which separates the highest and lowest values equally.
+        //  It is calculated by arranging the data set in order from lowest to highest and finding the value in the exact middle.
+
+
+
+
+        // BONUS:
+        // Rotate the May's temperature dataset of values by 90deg counter clock-wise.
+        // Eg: [
+        //     [1, 2, 3],
+        //     [4, 5, 6],
+        //     [7, 8]
+        // ]
+        // Rotated: [
+        //     [3, 6],
+        //     [2, 5, 8],
+        //     [1, 4, 7]
+        // ]
+    </script>
+</body>
+
+</html>

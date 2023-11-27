@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+    <script>
+        // Object Contructors
+        function Person() {
+            this.name = "Default";
+            this.age = 0;
+            this.height = 100;
+        }
+        let onePerson = new Person();
+        let twoPerson = new Person();
+
+
+        function Person2(inName, inAge = 0, inHeight = 100) {
+            this.name = inName;
+            this.age = inAge;
+            this.height = inHeight;
+
+            // Inside the constructor.
+            this.getName = function () {
+                return "INSIDE " + this.name;
+            }
+        }
+        let onePerson2 = new Person2("Alice", 24, 198);
+        let twoPerson2 = new Person2("Barbara");
+
+        console.log(new Person("Cheryl"));
+        console.log(onePerson2);
+
+        console.log(onePerson2.getName());
+        console.log(twoPerson2.getName());
+
+        // Outside, on the prototype.
+        Person2.prototype.getAge = function () {
+            return "PROTOTYPE: " + this.age;
+        }
+        console.log(onePerson2.getAge());
+        console.log(twoPerson2.getAge());
+
+    </script>
+</body>
+
+</html>

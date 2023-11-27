@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+You're airdropped near Easter Bunny Headquarters in a city somewhere. "Near", unfortunately, is as close as you can get - the instructions on the Easter Bunny Recruiting Document the Elves intercepted start here, and nobody had time to work them out further.
+
+The Document indicates that you should start at the given coordinates (where you just landed) and face North. Then, follow the provided sequence: either turn left (L) or right (R) 90 degrees, then walk forward the given number of blocks, ending at a new intersection.
+
+There's no time to follow such ridiculous instructions on foot, though, so you take a moment and work out the destination. Given that you can only walk on the street grid of the city, how far is the shortest path to the destination?
+
+For example:
+
+Following R2, L3 leaves you 2 blocks East and 3 blocks North, or 5 blocks away.
+R2, R2, R2 leaves you 2 blocks due South of your starting position, which is 2 blocks away.
+R5, L5, R5, R3 leaves you 12 blocks away.
+How many blocks away is Easter Bunny HQ, using the data in santa2.js?
+
+BONUS:
+Then, you notice the instructions continue on the back of the Recruiting Document. Easter Bunny HQ is actually at the first location you visit twice.
+
+For example, if your instructions are R8, R4, R4, R8, the first location you visit twice is 4 blocks away, due East.
+
+How many blocks away is the first location you visit twice?
+    </pre>
+    <script src="santa2.js"></script>
+    <script>
+
+
+
+
+
+        // 0 = North;
+        // 1 = East;
+        // 2 = South;
+        // 3 = West;
+
+        // const yourMoves = "R3, L5, R2, L1, L2, R5, L2, R2, L2, L2, L1, R2, L2, R4, R4, R1, L2, L3, R3, L1, R2, L2, L4, R4, R5, L3, R3, L3, L3, R4, R5, L3, R3, L5, L1, L2, R2, L1, R3, R1, L1, R187, L1, R2, R47, L5, L1, L2, R4, R3, L3, R3, R4, R1, R3, L1, L4, L1, R2, L1, R4, R5, L1, R77, L5, L4, R3, L2, R4, R5, R5, L2, L2, R2, R5, L2, R194, R5, L2, R4, L5, L4, L2, R5, L3, L2, L5, R5, R2, L3, R3, R1, L4, R2, L1, R5, L1, R5, L1, L1, R3, L1, R5, R2, R5, R5, L4, L5, L5, L5, R3, L2, L5, L4, R3, R1, R1, R4, L2, L4, R5, R5, R4, L2, L2, R5, R5, L5, L2, R4, R4, L4, R1, L3, R1, L1, L1, L1, L4, R5, R4, L4, L4, R5, R3, L2, L2, R3, R1, R4, L3, R1, L4, R3, L3, L2, R2, R2, R2, L1, L4, R3, R2, R2, L3, R2, L3, L2, R4, L2, R3, L4, R5, R4, R1, R5, R3";
+        yourMovesArray = yourMoves.split(", ");
+        const formattedMoves = yourMovesArray.map(move => {
+            const direction = move[0]; // Extract the first character as the direction
+            const distance = parseInt(move.slice(1)); // Extract the remaining characters and convert to integer
+            return [direction, distance];
+        }
+        );
+        console.log(formattedMoves);
+
+        // should be 243
+        PosX = [];
+        PosY = [];
+        currentDir = 0;
+
+        for (i = 0; i < formattedMoves.length; i++) {
+            if (formattedMoves[i][0] == "R") {
+                currentDir++;
+                if (currentDir == 1) {
+                    PosX.push(formattedMoves[i][1]);
+                }
+                else if (currentDir == 2) {
+                    PosY.push(formattedMoves[i][1] * -1);
+                }
+                else if (currentDir == 3) {
+                    PosX.push(formattedMoves[i][1] * -1);
+                }
+                else if (currentDir > 3 || currentDir == 0) {
+                    currentDir = 0;
+                    PosX.push(formattedMoves[i][1]);
+                }
+            }
+            else if (formattedMoves[i][0] == "L") {
+                currentDir--;
+                if (currentDir == 0) {
+                    PosY.push(formattedMoves[i][1]);
+                }
+                else if (currentDir == 1) {
+                    PosX.push(formattedMoves[i][1]);
+                }
+                else if (currentDir == 2) {
+                    PosY.push(formattedMoves[i][1] * -1);
+                }
+                else if (currentDir == 3) {
+                    PosX.push(formattedMoves[i][1] * -1);
+                }
+                else if (currentDir < 0) {
+                    currentDir = 3;
+                    PosX.push(formattedMoves[i][1] * -1);
+                }
+            }
+        }
+
+        countX = 0;
+        for (a = 0; a < PosX.length; a++) {
+            countX = countX + PosX[a];
+        }
+
+        countY = 0;
+        for (b = 0; b < PosY.length; b++) {
+            countY = countY + PosY[b];
+        }
+
+        console.log(PosX);
+        console.log(PosY);
+
+        console.log(countX);
+        console.log(countY);
+
+        console.log("Total Amount of Blocks to Bunny HQ: ", (Math.abs(countX) + Math.abs(countY)));
+
+    </script>
+</body>
+
+</html>
