@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="parsing-exercise.js"></script>
+    <pre>
+        // Q1: Create a new string with all occurrences of "Dursley" replaced with "BANANA"
+
+        <script>
+            const text2 = text.replace("Dursley", "BANANA");
+            console.log("old text: " + text);
+            // console.log("new text: " + text2);
+        </script>
+
+        // Q2: Count the number of paragraphs in the text.
+        // **Hint - Split the text into an array of paragraphs. Each paragraph is separated by a "\n" character.
+        
+        <script>
+            ptext = text.split("\n");
+            console.log(ptext.length);
+        </script>
+
+        // Q3: Count the number of occurrences of the word "Dursley"
+        // **Hint - Try splitting the string into an array
+
+        <script>
+            sum = 0;
+            dursleytext = text.split(" ");
+            console.log(dursleytext);
+            for (i = 0; i < dursleytext.length; i++) {
+                if (dursleytext[i].includes("Dursley")) {
+                    sum++;
+                }
+            }
+            console.log(sum);
+        </script>
+        </pre>
+
+
+</body>
+
+</html>

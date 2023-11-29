@@ -1,0 +1,137 @@
+.frogcoin {
+    height: 100%;
+    width: 15%;
+}
+
+svg {
+    height: 50px;
+    width: 50px;
+    /* border: 3px white solid; */
+}
+
+body {
+    margin: 0px;
+}
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* topHomePage */
+
+.topHomePage {
+    height: 100vh;
+    width: 100vw;
+    /* background-color: black; */
+}
+
+video {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f2025;
+    width: 100vw;
+    height: 15%;
+    position: relative;
+    box-shadow: 0 0 2px 2px darkgray;
+    z-index: 10;
+
+    /* border: 3px solid white; */
+}
+
+
+.frogcoinimage img {
+    width: 50%;
+    height: 50%;
+    position: relative;
+    left: 25%;
+}
+
+
+/* navbar */
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: avenir;
+}
+
+#navbarDisplay {
+    display: none;
+}
+
+.navbar {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%
+}
+
+#navbarDisplay:checked~.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+ul li {
+    list-style: none;
+    ;
+}
+
+
+
+/* middleHomePage */
+
+.middleHomePage {
+    height: 100vh;
+    width: 100vw;
+    background-color: #1f2025;
+}
+
+/* bottomHomePage */
+
+.bottomHomePage {
+    height: 100vh;
+    width: 100vw;
+    background-color: #1f2025;
+    opacity: 90%
+}
+
+/* MEDIASCREEN */
+
+@media screen and (min-width:800px) {
+    svg {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        position: relative;
+        top: 0;
+    }
+
+    .navbar ul {
+        display: flex;
+        gap: 4%
+    }
+
+    .home:hover,
+    .about:hover,
+    .community:hover,
+    .cc:hover,
+    .whitepapers:hover {
+        color: green;
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+
+<body>
+    <script>
+
+        let fruit = ["apple", "lemon", "pears", "melon"];
+
+        const [fruitOne, fruitTwo] = fruit;
+        const [fONe, fTwo, ...frest] = fruit; // assigns fruit[0] to fOne and fruit[1] to fTwo, and the rest to fRest
+
+        const nissanMonster = {
+            manufacturer: "Nissan",
+            model: "Camry",
+            fuel: "Electric",
+            color: "lavender",
+            productionYear: 2014,
+            registrationNumber: "BV70ZMW",
+        };
+
+        const { manufacturer, model } = nissanMonster;
+
+    </script>
+</body>
+
+</html>

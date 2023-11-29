@@ -38,11 +38,11 @@ What is the solution to your new captcha?
     </pre>
     <script src="santa3.js"></script>
     <script>
-        // captcha1 = "11223344551"
+        // captcha1 = "111223344551"
         // sum = [];
-        // for (i = 0; i < captcha.length; i++) {
-        //     if (captcha[i] == captcha[i + 1]) {
-        //         sum.push(parseInt(captcha[i]));
+        // for (i = 0; i < captcha1.length; i++) {
+        //     if (captcha1[i] == captcha1[i + 1]) {
+        //         sum.push(parseInt(captcha1[i]));
         //     }
         // }
         // finalsum = sum.reduce((a, b) => a + b, 0);
@@ -51,8 +51,7 @@ What is the solution to your new captcha?
 
         cap1 = "123123"
         sum = [];
-        strings_ahead = (captcha.length / 2);
-        console.log(strings_ahead);
+        // console.log(strings_ahead);
 
         for (i = 0; i < captcha.length; i++) {
             if (captcha[i] == captcha[Math.ceil(captcha.length / 2) + i]) {

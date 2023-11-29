@@ -1,6 +1,6 @@
 .frogcoin {
-    height: 100%;
-    width: 15%;
+    height: 125px;
+    width: 175px;
 }
 
 svg {
@@ -24,16 +24,9 @@ body {
 .topHomePage {
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
     /* background-color: black; */
-}
-
-video {
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -9999;
 }
 
 header {
@@ -50,12 +43,43 @@ header {
     /* border: 3px solid white; */
 }
 
+.backgroundMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+}
+
+.mainbody {
+    border: 5px black solid;
+    position: relative;
+    height: 85%;
+}
+
 
 .frogcoinimage img {
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
     position: relative;
-    left: 25%;
+    left: 35%;
+}
+
+.bodytext h3 {
+
+    position: relative;
+    margin: 0px;
+    top: 50%;
+    text-wrap: nowrap;
+    color: white;
+    font-size: 90px;
+    font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, helvetica, "Apple SD Gothic Neo", sans-serif;
 }
 
 
@@ -133,5 +157,9 @@ ul li {
     .whitepapers:hover {
         color: green;
         font-size: 18px;
+    }
+
+    .bodytext h3 {
+        font-size: 150px;
     }
 }
