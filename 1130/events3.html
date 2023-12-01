@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Review</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .square {
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+            transition: .5s;
+            border-radius: 5px;
+        }
+
+        .smallSquare {
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square"></div>
+    <div class="square" style="background-color: firebrick;"></div>
+
+    <script>
+        let allSquares = document.querySelectorAll(".square");
+
+        for (let i = 0; i < allSquares.length; i++) {
+            let square = allSquares[i];
+            square.addEventListener('click', resizeSquare);
+        }
+        // The Event Handler (the)
+        function resizeSquare(myEvent) {
+            console.log(myEvent);
+            myEvent.target.classList.toggle("smallSquare");
+        }
+    </script>
+</body>
+
+</html>

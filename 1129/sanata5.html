@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="santa5.txt"></script>
+    <pre>
+    Santa is delivering presents to an infinite two-dimensional grid of houses.
+
+He begins by delivering a present to the house at his starting location, and then an elf at the North Pole calls him via radio and tells him where to move next. Moves are always exactly one house to the north (^), south (v), east (>), or west (<). After each move, he delivers another present to the house at his new location.
+
+However, the elf back at the north pole has had a little too much eggnog, and so his directions are a little off, and Santa ends up visiting some houses more than once. How many houses receive at least one present?
+
+For example:
+
+> delivers presents to 2 houses: one at the starting location, and one to the east.
+^>v< delivers presents to 4 houses in a square, including twice to the house at his starting/ending location.
+^v^v^v^v^v delivers a bunch of presents to some very lucky children at only 2 houses.
+
+--- Part Two ---
+The next year, to speed up the process, Santa creates a robot version of himself, Robo-Santa, to deliver presents with him.
+
+Santa and Robo-Santa start at the same location (delivering two presents to the same starting house), then take turns moving based on instructions from the elf, who is eggnoggedly reading from the same script as the previous year.
+
+This year, how many houses receive at least one present?
+
+For example:
+
+^v delivers presents to 3 houses, because Santa goes north, and then Robo-Santa goes south.
+^>v< now delivers presents to 3 houses, and Santa and Robo-Santa end up back where they started.
+^v^v^v^v^v now delivers presents to 11 houses, with Santa going one direction and Robo-Santa going the other.
+</pre>
+    <script>
+
+        initpos = [0, 0];
+        houses = [];
+        houses.push([...initpos]); // Push a copy of initpos
+
+        for (let i = 0; i < santa5.length; i++) {
+            if (santa5[i] == ">") {
+                initpos[0] = initpos[0] + 1;
+                houses.push([...initpos]); // Push a copy of updated initpos
+            }
+            if (santa5[i] == "^") {
+                initpos[1] = initpos[1] + 1;
+                houses.push([...initpos]);
+            }
+            if (santa5[i] == "<") {
+                initpos[0] = initpos[0] - 1;
+                houses.push([...initpos]);
+            }
+            if (santa5[i] == "v") {
+                initpos[1] = initpos[1] - 1;
+                houses.push([...initpos]);
+            }
+        }
+
+        houses.sort();
+        finalHouses = [];
+        for (a = 0; a < houses.length; a++) {
+            if (JSON.stringify(houses[a]) !== JSON.stringify(houses[a + 1]))
+                finalHouses.push(houses[a]);
+        }
+
+        console.log("unique number of houses: " + finalHouses.length) // ONE SANTA;
+
+        initpos2 = [0, 0];
+        houses2 = [];
+        houses2.push([...initpos2]); // Push a copy of initpos
+
+        for (let a = 0; a < santa5.length; a += 2) {
+            if (santa5[a] == ">") {
+                initpos2[0] = initpos2[0] + 1;
+                houses2.push([...initpos2]); // Push a copy of updated initpos
+            }
+            if (santa5[a] == "^") {
+                initpos2[1] = initpos2[1] + 1;
+                houses2.push([...initpos2]);
+            }
+            if (santa5[a] == "<") {
+                initpos2[0] = initpos2[0] - 1;
+                houses2.push([...initpos2]);
+            }
+            if (santa5[a] == "v") {
+                initpos2[1] = initpos2[1] - 1;
+                houses2.push([...initpos2]);
+            }
+        }
+
+        initpos3 = [0, 0];
+        houses3 = [];
+        houses3.push([...initpos3]); // Push a copy of initpos
+
+        for (let b = 1; b < santa5.length; b += 2) {
+            if (santa5[b] == ">") {
+                initpos3[0] = initpos3[0] + 1;
+                houses3.push([...initpos3]); // Push a copy of updated initpos
+            }
+            if (santa5[b] == "^") {
+                initpos3[1] = initpos3[1] + 1;
+                houses3.push([...initpos3]);
+            }
+            if (santa5[b] == "<") {
+                initpos3[0] = initpos3[0] - 1;
+                houses3.push([...initpos3]);
+            }
+            if (santa5[b] == "v") {
+                initpos3[1] = initpos3[1] - 1;
+                houses3.push([...initpos3]);
+            }
+        }
+
+        robo_santa = houses2.concat(houses3);
+        robo_santa.sort();
+
+        robo_santa_houses = [];
+        for (c = 0; c < robo_santa.length; c++) {
+            if (JSON.stringify(robo_santa[c]) !== JSON.stringify(robo_santa[c + 1]))
+                robo_santa_houses.push(robo_santa[c]);
+        }
+
+        console.log("robo santa unique number of houses: " + robo_santa_houses.length) // 2 SANTA;
+    </script>
+</body>
+
+</html>

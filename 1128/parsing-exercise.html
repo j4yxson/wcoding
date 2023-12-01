@@ -13,17 +13,21 @@
         // Q1: Create a new string with all occurrences of "Dursley" replaced with "BANANA"
 
         <script>
-            const text2 = text.replace("Dursley", "BANANA");
-            console.log("old text: " + text);
-            // console.log("new text: " + text2);
+
+            const text2 = text.replaceAll("Dursley", "BANANA");
+            // console.log("old text: " + text);
+            console.log("new text: " + text2);
+
         </script>
 
         // Q2: Count the number of paragraphs in the text.
         // **Hint - Split the text into an array of paragraphs. Each paragraph is separated by a "\n" character.
         
         <script>
+
             ptext = text.split("\n");
             console.log(ptext.length);
+
         </script>
 
         // Q3: Count the number of occurrences of the word "Dursley"

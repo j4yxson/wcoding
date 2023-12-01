@@ -35,7 +35,59 @@ How many total feet of ribbon should they order?
     </pre>
     <script src="santa4.js"></script>
     <script>
-        console.log(allPresents);
+
+        allPresents1 =
+            `3x11x24
+            13x5x19
+            1x9x27
+            24x8x21
+            6x8x17
+            19x18x22
+            10x9x12`;
+
+        // 2*l*w + 2*w*h + 2*h*l + area of smallest side
+        // l * w * h
+        let presentsArray = allPresents.trim();
+        a1 = presentsArray.split("\n");
+        a2 = [];
+
+        for (i = 0; i < a1.length; i++) {
+            if (i < a1.length) {
+                nospacevalue = a1[i].toString().trimStart();
+                a2.push(nospacevalue);
+            }
+        }
+
+        console.log(a2);
+        a3 = [];
+        for (a = 0; a < a2.length; a++) {
+            noxvalue = a2[a].split("x");
+            a3.push((noxvalue));
+        }
+        // use a3 as default array
+
+        // a3 =
+        // [[3,11,24],
+        //  [13,5,19],
+        //  [1,9,27],
+        //  [24,8,21],
+        //  [6,8,17],
+        //  [19,18,22],
+        //  [10,9,12]]
+
+        // 2*l*w + 2*w*h + 2*h*l + area of smallest side
+        // l * w * h
+
+        a3.forEach((element) => (element.sort((a, b) => a - b))); // sorting to be able to use index 0 and 1 for always smallest side
+
+        sum = 0;
+        for (b = 0; b < a3.length; b++) {
+            total = (2 * (a3[b][0]) * (a3[b][1])) + (2 * (a3[b][1]) * (a3[b][2])) + (2 * (a3[b][0]) * (a3[b][2])); //2*l*w + 2*w*h + 2*h*l
+            leeway = (a3[b][0]) * (a3[b][1]); // area of smallest side
+            finalTotal = total + leeway;
+            sum += finalTotal;
+        }
+        // 1588178 feet of wrapping paper
     </script>
 </body>
 

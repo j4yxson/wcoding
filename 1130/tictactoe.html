@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 80px;
+            margin: 0;
+        }
+
+        .nextturn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        p {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .box {
+            border: 3px solid purple;
+            height: 100px;
+            width: 100px;
+            font-size: 75px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .board {
+            display: flex;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul {
+            margin-top: 50px;
+            padding: 0;
+        }
+
+        ul li {
+            border: 5px solid black;
+            height: 200px;
+            width: 200px;
+            list-style: none;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nextturn">
+        <h1>
+            <center>Tic Tac Toe</center>
+        </h1>
+        <div class="nextturnbox">
+            <div class="title">
+                <p>Next Turn</p>
+                <div class="box"></div>
+            </div>
+        </div>
+    </div>
+    <div class="board">
+        <ul class="col1">
+            <li>
+
+            </li>
+            <li>
+
+            </li>
+            <li>
+
+            </li>
+        </ul>
+        <ul class="col2">
+            <li>
+
+            </li>
+            <li>
+
+            </li>
+            <li>
+
+            </li>
+        </ul>
+        <ul class="col3">
+            <li>
+
+            </li>
+            <li>
+
+            </li>
+            <li>
+
+            </li>
+        </ul>
+    </div>
+    <script>
+        column1 = document.getElementsByClassName("col1")[0].getElementsByTagName("li");
+        column2 = document.getElementsByClassName("col2")[0].getElementsByTagName("li");
+        column3 = document.getElementsByClassName("col3")[0].getElementsByTagName("li");
+
+        player = 0;
+
+        // adding event listener for each li
+        for (i = 0; i < column1.length; i++) { //column1.length is 3
+            column1[i].addEventListener("click", cellClick);
+
+            column2[i].addEventListener("click", cellClick);
+
+            column3[i].addEventListener("click", cellClick);
+        }
+
+        function cellClick() {
+            if (event.target.children.length == 0) {
+                filled = document.createElement("div");
+                if (player == 0) {
+                    event.target.innerHTML = "X";
+                    document.getElementsByClassName("box")[0].innerHTML = "O";
+                }
+                else {
+                    event.target.innerHTML = "O";
+                    document.getElementsByClassName("box")[0].innerHTML = "X";
+                }
+                event.target.appendChild(filled);
+                player = 1 - player;
+            }
+        }
+
+        // checking vertical/horizontal values
+
+        for (a = 0; a < column1.length; a++) {
+            if ((column1[a] == column1[a + 1] && column1[a] == column1[a + 2]) || (column2[a] == column2[a + 1] && column2[a] == column2[a + 2]) || (column3[a] == column3[a + 1] && column3[a] == column3[a + 2])) {
+                console.log('it works at least');
+            }
+        }
+
+    </script>
+</body>
+
+</html>

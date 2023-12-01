@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise3</title>
+</head>
+
+<body>
+    <ol>
+        <li>
+            <p>
+                Using only JS, generate the necessary HTML to re-create the text in the image:
+            </p>
+            <img src="js-dom-exercise3-1.png">
+            <p>
+                The text includes parts in bold and parts that are anchor links to remote websites. The "standards
+                organization"
+                text should link to https://en.wikipedia.org/wiki/Standards_organization and the "World Wide Web" text
+                should link
+                to https://en.wikipedia.org/wiki/World_Wide_Web_Consortium on your finished result.
+            </p>
+        </li>
+        <li>
+            <p>
+                Using the following array: </br>
+
+                let languages = ['JavaScript', 'Node', 'Vue', 'React'];
+            </p>
+            <p>
+                Create an unordered list with only JS that will appear in a browser like the following image:
+            </p>
+            <img src="js-dom-exercise3-2.png">
+        </li>
+        <li>
+            <p> Create an HTML file uploading section using only JS that will appear like the following image:</p>
+            <img src="js-dom-exercise3-3.png">
+            <p> Note that the "No file chosen" text is automatically produced by the input element.</p>
+        </li>
+    </ol>
+
+    <p>The
+        <b>World Wide Web Consortium</b>,
+        abbreviated as acronym
+        <b>W3C</b>,
+        is a
+        <a href=#>standards organization</a>
+        non-profit organization responsible for promoting the capabilities of the
+        <a href=#>World Wide Web</a>
+    </p>
+
+    Languages based on ECMA Script:
+    <ul>
+        <li>JavaScript</li>
+        <li>Node</li>
+        <li>Vue</li>
+        <li>React</li>
+    </ul>
+
+
+    <script>
+
+        wwwP = document.createElement("p"); // create outer paragraph tag
+        wwwP.insertAdjacentText("afterbegin", "The"); // create text "The"
+        boldWWWC = document.createElement("b"); // create bold tag
+        WWWC = document.createTextNode(" World Wide Web Consortium"); // bold words
+        boldWWWC.appendChild(WWWC); // appending bold words to bold tag
+        wwwP.appendChild(boldWWWC); // appending bold tag to paragraph
+        wwwP.insertAdjacentText("beforeEnd", " abbreviated as acronym ");
+        boldWWWC2 = document.createElement("b"); // create second bold tag
+        W3C = document.createTextNode("W3C"); // bold words
+        boldWWWC2.appendChild(W3C); // appending bold words to bold tag
+        wwwP.appendChild(boldWWWC2); // appending bold tag to paragraph
+        wwwP.insertAdjacentText("beforeEnd", ", is a ");
+        s_o = document.createElement("a");
+        s_o.setAttribute("href", "https://en.wikipedia.org/wiki/Standards_organization");
+        s_o.innerHTML = ("standards organization");
+        wwwP.appendChild(s_o);
+        wwwP.insertAdjacentText("beforeEnd", "  non-profit organization responsible for promoting the capabilities of the");
+        wwwA = document.createElement("a");
+        wwwA.setAttribute("href", "https://en.wikipedia.org/wiki/World_Wide_Web_Consortium");
+        wwwA.innerHTML = ("World Wide Web");
+        wwwP.appendChild(wwwA);
+
+        document.body.appendChild(wwwP);
+
+    </script>
+    <script>
+        listTitle = document.createElement("p");
+        listTitle.innerHTML = ("Languages based on ECMA Script:");
+        document.body.appendChild(listTitle);
+
+        // <ul>
+        //     <li>JavaScript</li>
+        //     <li>Node</li>
+        //     <li>Vue</li>
+        //     <li>React</li>
+        // </ul>
+
+        let languages = ['JavaScript', 'Node', 'Vue', 'React'];
+        unorderedlist = document.createElement("ul");
+        for (i = 0; i < languages.length; i++) {
+            listitem = document.createElement("li");
+            listitem.innerHTML = languages[i];
+            unorderedlist.appendChild(listitem);
+        }
+
+        document.body.appendChild(unorderedlist);
+    </script>
+
+    <script>
+
+        // <fieldset>
+        //     <legend>Upload an image</legend>
+        //     <p>Image to upload :<button>Choose File</button>No File Chosen</p>
+        //     <p><button>Send</button></p>
+        // </fieldset>
+
+
+        imageupload = document.createElement("fieldset"); //creating fieldset
+        legend = document.createElement("legend"); //creating legend
+        legend.innerHTML = ("Upload an image:"); // legend name
+        imageupload.appendChild(legend); // appending legend to fieldset
+
+
+        imagep = document.createElement("p");
+        imagepText = document.createTextNode("Image to upload :");
+        imagep.appendChild(imagepText);
+        imageupload.appendChild(imagep);
+
+        input1 = document.createElement("input");
+        input1.setAttribute("type", "file");
+        imagep.appendChild(input1);
+        imageupload.appendChild(imagep);
+
+        imagep2 = document.createElement("p");
+        input2 = document.createElement("input");
+        input2.setAttribute("type", "submit");
+        input2.setAttribute("value", "Send");
+
+
+        imagep2.appendChild(input2);
+        imageupload.appendChild(imagep2);
+
+
+        document.body.appendChild(imageupload);
+
+    </script>
+</body>
+
+</html>
