@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR</title>
+</head>
+
+<body>
+    <script>
+        const myXHR = new XMLHttpRequest();
+        myXHR.open("GET", "https://official-joke-api.appspot.com/random_joke");
+        myXHR.addEventListener("load", function () {
+            // console.log("DATA:", this.response);
+
+            let inObj = JSON.parse(this.responseText);
+            let jokeElem = document.querySelector("#joke");
+            jokeElem.innerHTML = inObj.setup;
+
+            let punchElem = document.querySelector("#punchline");
+            punchElem.innerHTML = inObj.punchline;
+
+            jokeElem.addEventListener("click", function () {
+                punchElem.style.display = "block";
+            });
+        });
+
+        myXHR.send();
+    </script>
+</body>
+
+</html>

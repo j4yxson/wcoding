@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+}
+
+.main {
+    background-color: #f7f9fb;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    font-family: sans-serif;
+}
+
+.login h2 {
+    font-size: 40px;
+    font-family: sans-serif;
+    letter-spacing: -1px;
+    background-image: linear-gradient(to right, #ff00cc, #3333cc);
+    /* Specify your gradient colors here */
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* margin-bottom: 0; */
+}
+
+/* header section */
+.header {
+    position: relative;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    justify-content: space-between;
+    /* background-color: whitesmoke; */
+}
+
+.homelink {
+    color: black;
+    text-decoration: none;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    margin-right: 10px;
+}
+
+#ham {
+    display: none;
+}
+
+.header:has(#ham:checked) ul {
+    display: block;
+}
+
+.logopic {
+    margin-top: 10px;
+    height: 69px;
+    width: 94px;
+}
+
+.header ul {
+    position: absolute;
+    top: 100%;
+    display: none;
+    list-style: none;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: Black;
+    font-weight: bold;
+    text-wrap: nowrap;
+}
+
+.header ul li a:hover {
+    color: #3333cc;
+    font-size: 20px
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.socials li {
+    display: none;
+}
+
+.socials li a:hover {
+    color: blue;
+}
+
+/* login section */
+
+.login {
+    border: 3px solid purple;
+    border-radius: 10px;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.username,
+.password {
+    display: flex;
+    flex-direction: column;
+}
+
+.username label,
+.password label {
+    font-size: 20px;
+}
+
+.submit {
+    margin-top: 20px;
+}
+
+.disclaimer {
+    opacity: 30%;
+    margin: 50px 10px 0px 10px;
+}
+
+@media screen and (min-width:1000px) {
+
+    .header ul {
+        display: flex;
+        gap: 10%;
+        position: relative;
+        top: 0%;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .community:hover~.socials li {
+        display: flex;
+    }
+}

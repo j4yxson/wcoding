@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day2</title>
+</head>
+
+<body>
+    <!-- only 12 red cubes, 13 green cubes, and 14 blue cubes -->
+    <script src="day2.js"></script>
+    <script>
+
+        splitgames2 = games2.split("\n");
+        newArray = [];
+        splitgames2.forEach((e) => newArray.push(e.slice(e.indexOf("Game"))));
+        test = [];
+        test.push(newArray[1].slice(newArray[1].indexOf(":"), newArray[1].indexOf(";")));
+
+        test1 = test[0].slice(1, test[0].length).trimStart();
+        // '7 green, 5 red, 3 blue'
+        testarray = [];
+        testarray.push("red");
+        testarray.push(test1.slice(test1.indexOf("red") - 2, test1.indexOf("red") - 1));
+        testarray.push("blue");
+        testarray.push(test1.slice(test1.indexOf("blue") - 2, test1.indexOf("blue") - 1));
+        testarray.push("green");
+        testarray.push(test1.slice(test1.indexOf("green") - 2, test1.indexOf("green") - 1));
+        console.log(testarray);
+
+    </script>
+
+</body>
+
+</html>

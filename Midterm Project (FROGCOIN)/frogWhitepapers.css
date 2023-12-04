@@ -1,0 +1,18 @@
+body {
+    background-color: #f7f9fb;
+    font-family: sans-serif;
+    margin: 50px;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+h5 {
+    font-size: 25px;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 20px;
+}

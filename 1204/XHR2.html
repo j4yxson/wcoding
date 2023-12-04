@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR 2</title>
+    <style>
+        body {
+            height: 100vh;
+            display: Flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 3rem;
+        }
+
+        img {
+            height: 300px;
+        }
+
+        button {
+            padding: 0.5rem 3rem;
+            font-size: 1.5rem;
+            font-weight: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="">
+    <br>
+    <button>
+        Next Dog
+    </button>
+    <script>
+        imageElem = document.querySelector("img");
+        buttonElem = document.querySelector("button");
+
+        function getDog() {
+            const myXML = new XMLHttpRequest();
+            myXML.open("GET", "https://dog.ceo/api/breeds/image/random");
+            myXML.addEventListener("load", function () {
+                // console.log(myXHR.responseText);
+
+                dogObj = JSON.parse(myXML.responseText);
+                imageElem.setAttribute("src", dogObj.message);
+            })
+            myXML.send();
+        };
+
+        getDog();
+
+        buttonElem.addEventListener("click", getDog);
+
+    </script>
+</body>
+
+</html>

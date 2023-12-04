@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+}
+
+.main {
+    background-color: #f7f9fb;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* header section */
+.header {
+    position: relative;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    justify-content: space-between;
+    /* background-color: whitesmoke; */
+}
+
+.homelink {
+    color: black;
+    text-decoration: none;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    margin-right: 10px;
+}
+
+#ham {
+    display: none;
+}
+
+.header:has(#ham:checked) ul {
+    display: block;
+}
+
+.logopic {
+    margin-top: 10px;
+    height: 69px;
+    width: 94px;
+}
+
+.header ul {
+    position: absolute;
+    top: 100%;
+    display: none;
+    list-style: none;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: Black;
+    font-weight: bold;
+    text-wrap: nowrap;
+}
+
+.header ul li a:hover {
+    color: #3333cc;
+    font-size: 20px
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.socials li {
+    display: none;
+}
+
+.socials li a:hover {
+    color: blue;
+}
+
+.properties {
+    width: 90vw;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.properties h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: sans-serif;
+    letter-spacing: -1px;
+    background-image: linear-gradient(to right, #ff00cc, #3333cc);
+    /* Specify your gradient colors here */
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+}
+
+.container {
+    height: 80%;
+    width: 80%;
+    border-radius: 20px;
+    /* display: flex; */
+    /* gap: 50px; */
+    overflow: auto;
+}
+
+.prop {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.prop .images {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    overflow: auto;
+}
+
+.prop .images img {
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+.bot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons button {
+    height: 50px;
+    width: 100px;
+    color: purple;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.buttons {
+    display: flex;
+    gap: 50px;
+}
+
+
+@media screen and (min-width:1000px) {
+    .community:hover~.socials li {
+        display: flex;
+    }
+
+    .header ul {
+        display: flex;
+        gap: 10%;
+        position: relative;
+        top: 0%;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .properties h1 {
+        text-align: center;
+        font-size: 70px
+    }
+
+    .container {
+        margin-bottom: 50px;
+        scroll-snap-type: y mandatory;
+    }
+
+    .prop {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .prop .images {
+        height: 100%;
+        width: 50%;
+    }
+}
