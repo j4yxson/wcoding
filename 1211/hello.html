@@ -18,13 +18,29 @@
         }
 
         .square {
-            background-color: cornflowerblue
+            background-color: cornflowerblue;
+            transition: all 2s;
         }
     </style>
 </head>
 
 <body>
-    <div class="square"></div>
+    <div class="square">hello</div>
+    <script>
+        let squareElem = document.querySelector(".square");
+        function showSquare() {
+            squareElem.style.opacity = 1;
+            setTimeout(hideSquare, 2000);
+        }
+
+        function hideSquare() {
+            squareElem.style.opacity = 0;
+            setTimeout(showSquare, 2000);
+        }
+
+        showSquare();
+
+    </script>
 </body>
 
 </html>
