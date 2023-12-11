@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flag game</title>
+    <style>
+        .main {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+
+        .flag {
+            position: relative;
+        }
+
+        .flag img {
+            height: 300px;
+            width: 500px;
+        }
+
+        .countries {
+            display: flex;
+            gap: 30px;
+        }
+
+        .streak {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        p {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .flagfacts {
+            position: absolute;
+            z-index: 2;
+            background-color: white;
+            opacity: 80%;
+            height: 300px;
+            width: 500px;
+            display: none;
+        }
+
+        .flag:hover .flagfacts {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Guess the Flag</h1>
+        <div class="streak">
+            <h2>Current Streak</h2>
+            <p></p>
+        </div>
+        <div class="flag">
+            <!-- <div class="flagfacts">
+                <h1>Flag Facts</h1>
+                <div class="capital">test</div>
+                <div class="population">test</div>
+                <div class="continent">test</div>
+            </div> -->
+        </div>
+        <div class="countries"></div>
+    </div>
+
+    <!-- <script>
+
+        let countries;
+        // fetch("https://restcountries.com/v3.1/all")
+        //     .then(res => res.json())
+        //     .then(res => {
+        //         countries = res;
+        //         console.log("RES", countries);
+        //     });
+
+        async function fetchData() {
+            try {
+                const response = await fetch("https://restcountries.com/v3.1/all");
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+
+        // Example usage
+        async function getData() {
+            try {
+                const countries = await fetchData();
+                console.log("RES", countries);
+                // Do something with countries
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
+        getData();
+        //i want to pick a flag at random and append it to the DOM
+        //globalres[0].flags.png <- how to get to a flag structure
+
+        //picking a country's flag at random
+
+        function getFlag() {
+            randNum = Math.floor(Math.random() * 250);
+            flagURL = countries[randNum].flags.png;
+            console.log(flagURL);
+        }
+
+        getFlag();
+
+
+    </script> -->
+    <script>
+        let countries;
+
+        async function fetchData() {
+            try {
+                const response = await fetch("https://restcountries.com/v3.1/all");
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+
+        async function getData() {
+            try {
+                countries = await fetchData();
+                console.log("RES", countries);
+
+                populateOtherButtons();
+                getFlag();
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
+        getData();
+
+        // Picking a country's flag at random
+
+        function getFlag() {
+            if (countries) { //if the countries data exists (so basically the api call has given us back data)
+                const randNum = Math.floor(Math.random() * countries.length);
+                const country = countries[randNum];
+                const countryName = country.name.common;
+                console.log(countryName);
+                const flagURL = country.flags.png;
+                // document.querySelector(".capital").innerHTML = ("Capital: " + country.capital[0]);
+                // document.querySelector(".population").innerHTML = ("Population: " + country.population);
+                // document.querySelector(".continent").innerHTML = ("Continent: " + country.continents[0]);
+
+                if (flagURL) {
+                    console.log(flagURL);
+                    flag = document.createElement("img");
+                    flag.src = flagURL;
+                    flag.class = countryName;
+                    document.querySelector(".flag").appendChild(flag);
+                }
+
+                if (countryName) {
+                    randomChoice = Math.ceil(Math.random() * 4); //gives me 1,2,3,4
+                    buttonclass = ".button" + randomChoice
+                    document.querySelector(buttonclass).innerHTML = countryName;
+                }
+
+                document.querySelector("p").innerHTML = streakCounter;
+            }
+        }
+        streakCounter = 0;
+        function populateOtherButtons(correctCountryName) {
+            for (i = 1; i < 5; i++) {
+                randomCountryIndex = Math.floor(Math.random() * 250);
+                randomCountryName = countries[randomCountryIndex].name.common;
+                console.log(randomCountryName);
+                newButton = document.createElement("button");
+                newButton.setAttribute("class", "button" + i);
+                newButton.innerHTML = randomCountryName;
+
+                newButton.addEventListener("click", function () {
+                    if (this.innerHTML == document.querySelector("img").class) {
+                        alert("Correct");
+                        streakCounter++;
+                        document.querySelector(".countries").innerHTML = "";
+                        document.querySelector(".flag").innerHTML = "";
+                        getData();
+                        // window.location.reload();
+                    }
+                    else if (this.innerHTML !== document.querySelector("img").class) {
+                        this.style.display = "none";
+                        streakCounter = -1;
+                    };
+                })
+                document.querySelector(".countries").appendChild(newButton);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

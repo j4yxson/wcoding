@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hangman</title>
+    <style>
+        .done {
+            height: 100vh;
+            width: 100vw;
+            background-color: purple;
+            z-index: 5;
+            display: none;
+            position: absolute;
+        }
+
+        .win {
+            height: 100vh;
+            width: 100vw;
+            background-color: purple;
+            z-index: 5;
+            display: none;
+            position: absolute;
+            opacity: 80%;
+        }
+
+        input {
+            border: 3px solid black;
+            height: 100px;
+            width: 100px;
+        }
+
+        .playArea {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid green;
+            height: 100vh;
+            flex-direction: column;
+            gap: 100px;
+        }
+
+        .guess {
+            display: flex;
+            gap: 20px;
+        }
+
+        .guess div {
+            border: 2px solid red;
+            height: 100px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="win">WINNER</div>
+    <div class="done"></div>
+    <div class="playArea">
+        <input type="text">
+        <div class="guess">
+        </div>
+    </div>
+
+    <script>
+
+        let word = [];
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://random-word-api.herokuapp.com/word?length=5");
+        xhr.addEventListener("load", function () {
+            word = JSON.parse(xhr.responseText); // parsing it into empty array
+            console.log(word);
+            createDivs();
+        });
+        xhr.send();
+
+        // in my word variable, a 5 letter word is called in an array. ex. word = ['beets']
+        // next, i want to create 1 div for every letter in the word
+
+        counter = 0;
+        function createDivs() { //function that creates divs taking in a word
+            for (i = 0; i < word[0].length; i++) { //creating a div for every letter in the word
+                newDiv = document.createElement("div"); //creating the div
+                counter += 1; //creating a counter to identify the individual divs
+                newDiv.setAttribute("class", "div" + counter); //assigning the class to each div
+                document.querySelector(".guess").appendChild(newDiv); //appending new div to the div
+            }
+        }
+
+        // next, i want to take the single letter input and compare it to the actual word;
+        // if the inputted letter is found in the word, then i want to innerHTMl the input value at the index of the found letter.
+
+        input = document.querySelector("input"); // assigning the input as a variable
+        indeces = [];
+
+        // function hasLetter() { //creating a function called hasLetter that checks if the inputted value is found in the word variable
+        //     const inputValue = input.value.toLowerCase(); //setting inputValue to the inputvalue lowercased
+        //     if (inputValue !== "") {//if the input is not blank, therefore accounting for backspaces
+        //         if (word[0].includes(inputValue)) { // if the word variable has the lowercase letter (found at input value), then do this
+        //             indexCorrectLetter = (word[0].indexOf(inputValue) + 1); //identifying the index of where the inputted value == letter in the word
+        //             divPos = ".div" + indexCorrectLetter; //creating the finder for the div to add text to
+        //             // correctLetter = document.createTextNode(input.value); //creating the text node of the correct letter and assigning it to the var correctLetter
+        //             // document.querySelector(divPos).appendChild(correctLetter); //appending the text node to the correct div 
+        //             document.querySelector(divPos).innerHTML = input.value; //for the innerHTML of the div at the index of where the correct letter is, set the html to equal the correct letter;
+        //         }
+        //         else { alert("incorrect") };
+        //     }
+        // }
+        counter2 = 0; //creating a counter to limit the amount of tries one has
+        function hasLetter() { // creating a function called hasletter
+            const inputValue = input.value.toLowerCase(); // assigning the inputted value in lowercase to a constant
+
+            if (inputValue !== "") { // making sure the value is not blank
+                let correctGuess = false; // assigning false to correct guess
+
+                for (let a = 0; a < word[0].length; a++) { // for a is less than the word length
+                    if (word[0][a] === inputValue) { // if the word at index a is equal to the input value
+                        correctGuess = true; // make correct guess into true
+                        const indexCorrectLetter = a + 1; //assing the indexCorrectLetter variable to the index of a + 1, because the squares are index1
+                        const divPos = ".div" + indexCorrectLetter; //assign the divclass to a variable
+                        document.querySelector(divPos).innerHTML = inputValue; // make the innerHTMl the inputted value
+                        document.querySelector("input").value = ""; //resetting value to blank after correct guess
+                        if (a == word[0].length - 1) {
+                            document.body.getElementsByClassName("win")[0].style.display = "flex";
+                            document.activeElement.blur();
+                            return;
+                        }
+                    }
+                }
+
+                if (!correctGuess) { //if not the correctguess
+                    counter2 += 1; // have the "guess" counter go up by 1
+                    if (counter2 > 5) { // if the guess counter hits 5 attempts 
+                        alert("GAME OVER YOU KILLED HIM"); //alert
+                        document.body.getElementsByClassName("done")[0].style.display = "block"; // reveal an overlay that covers entire screen
+                    }
+                }
+            }
+        }
+        document.querySelector("input").addEventListener("input", hasLetter); //creating an event listener so when i input something into the input box, the hasLetter function will run
+
+    </script>
+</body>
+
+</html>

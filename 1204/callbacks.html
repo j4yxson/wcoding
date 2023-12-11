@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks</title>
+</head>
+
+<body>
+    <script>
+        let allNums = [5, 2, 4, 24, 54, 25, 15];
+        allNums.sort((a, b) => a - b); // same as 
+
+
+        allnums.sort(sortMyNums); // this
+
+        console.log(allNums);
+
+        function sortMyNums(a, b) {
+            return a - b;
+        }
+    </script>
+</body>
+
+</html>

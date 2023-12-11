@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .places {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80vw;
+            /* border: 3px solid green; */
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        h1 {
+            /* border: 3px solid blue; */
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .willowgrove {
+            background-color: blue;
+            color: white;
+        }
+
+        .sandiego {
+            background-color: yellow;
+        }
+
+        .boston {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Weather</h1>
+        <div class="places">
+            <!-- <div class="seoul">Seoul</div> -->
+            <div class="willowgrove">
+                <div class="currenttime"></div>
+                <div class="currentweather"></div>
+                <div class="feelslike"></div>
+            </div>
+            <div class="sandiego">
+                <div class="currenttime"></div>
+                <div class="currentweather"></div>
+                <div class="feelslike"></div>
+            </div>
+            <div class="boston">
+                <div class="currenttime"></div>
+                <div class="currentweather"></div>
+                <div class="feelslike"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const API_KEY = '6f5b388505dd4f708a0115457230612';
+        const wg_zip_code = '19090';
+        const b_zip_code = '02119';
+        const sd_zip_code = '92131';
+        const s_zip_code = '07395';
+
+
+        async function fetchData(zipCode) {
+            try {
+                const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${zipCode}`);
+
+                // Check if the response status is OK
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                throw error; // Propagate the error
+            }
+        }
+
+        async function getData() {
+            try {
+                weatherapiWG = await fetchData(wg_zip_code);
+                console.log("Weather in WG:", weatherapiWG);
+
+                weatherapiB = await fetchData(b_zip_code);
+                console.log("Weather in Boston:", weatherapiB);
+
+                weatherapiSD = await fetchData(sd_zip_code);
+                console.log("Weather in San Diego:", weatherapiSD);
+
+                // const weatherapiS = await fetchData(s_zip_code);
+                // console.log("Weather in Seoul:", weatherapiS);
+
+                // Do something with weather data
+
+                updateWeatherInfo(weatherapiWG, document.querySelector(".willowgrove"));
+                updateWeatherInfo(weatherapiB, document.querySelector(".boston"));
+                updateWeatherInfo(weatherapiSD, document.querySelector(".sandiego"));
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
+        // Call getData to initiate the process
+        getData();
+
+
+        function updateWeatherInfo(weatherData, targetElement) {
+            targetElement.innerHTML = weatherData.location.name;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

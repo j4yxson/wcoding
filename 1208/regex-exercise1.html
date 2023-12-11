@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regex time</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const str2 = "sdfcdskvsdm";
+        const str3 = "AAZddASvKlkfec";
+        const str4 = "05678298818";
+
+        const str5 = "abbbbbb";
+        const str6 = "abbc";
+        const str7 = "ab";
+
+        const str9 = "ac";
+
+        const str10 = "abb";
+
+        const str11 = "abbb";
+        const str12 = "abbbbb";
+
+        const str13 = "aaNBB";
+        const str14 = "aaaaaaA";
+
+        const str15 = "AANBB";
+        const str16 = "aaaabbb";
+
+
+        const str17 = "AAvdes_vEFZc_cdsAZD";
+        const str18 = "ZSKJZ";
+        const str19 = "qwerty_uiop_cvbn";
+
+        // 1. match str2 but not str3 and not str4
+
+        regex1 = /^s.*/g;
+
+        matches = str2.match(regex1);
+        console.log(matches);
+
+        // 2. match str4 but not str2 and not str3
+
+        regex2 = /^\d*/g;
+
+        matches1 = str4.match(regex2);
+        console.log(matches1);
+
+        // 3. match str2 and str3 but not str4
+
+        regex3 = /^[a-zA-z].*/g;
+
+        console.log("String2 Matches: ", str2.match(regex3), "String3 Matches: ", str3.match(regex3))
+
+        // 4. match str5 str6 and str7 but not str9
+
+        regex4 = /a[b]+[c]?/g;
+
+        // 5. match str11 and str12 but not str10
+
+        regex5 = /a[b]{3,}/g
+
+        // 6. match str13 and str14 but not str15 and str16 // lowercase followed by uppercase
+
+        regex6 = /[a]{2,}[A]?[N]?[B]?[B]?\b/g;
+
+        // 7. match str17 and str18 and str19
+
+        regex7 = /\w/g;
+
+    </script>
+</body>
+
+</html>

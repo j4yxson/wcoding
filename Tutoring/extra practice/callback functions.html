@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        Problem Set 1: Callback Functions
+            Write a function double that takes a number and a callback function as arguments, and the callback should be applied to the double of the number.
+
+            Create a function sum that takes two numbers and a callback function. The callback function should be applied to the sum of the two numbers.
+
+            Implement a function getUserData that takes a user ID and a callback function. The callback function should be called with the user data retrieved from an imaginary database.
+    </pre>
+    <script>
+        // function double(number, callback) { // a function takes in a number and a callback function
+        //     const doubledValue = number * 2; // doubledValue evaluates out to the passed #*2
+        //     return callback(doubledValue); // callback function takes in the doublevalue as an argument whenever it gets called
+        // }
+
+        // // Example usage:
+        // function addTen(value) { // a function called addTen to whatever value is passed
+        //     return value + 10;
+        // }
+
+        // const result = double(5, addTen);
+
+        // console.log(result); // Output: 20
+
+
+        function sum(num1, num2, callback) {
+            sumofboth = num1 + num2;
+            return callback(sumofboth);// passing in the sum of both as the value for the callback function
+        }
+
+        sum(5, 15, (x) => console.log(x * 2)); // sumofboth = 20, 20*2 = 40;
+
+
+    </script>
+</body>
+
+</html>

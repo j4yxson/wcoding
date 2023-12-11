@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h1 {
+            color: purple;
+            font-size: 80px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .listitem {
+            display: flex;
+            gap: 10px;
+        }
+
+        .listitemdesc {
+            border-bottom: 3px solid black;
+            width: 40vw;
+        }
+
+        .listitem input:first-child:checked~input {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <h1>To Do List</h1>
+            <button class="add">Add</button>
+        </header>
+        <div class="listitem">
+            <input type="checkbox">
+            <input type="text">
+        </div>
+        <div class="listitem">
+            <input type="checkbox">
+            <input type="text">
+        </div>
+    </div>
+
+    <script>
+        //creating a to do list that you can add, edit, and delete tasks
+
+        //add
+        //when you click the add button, a new div should be created that has the same properties as the other listitem divs where you can first write something
+
+        document.querySelector(".add").addEventListener("click", createNewListItem); // when the add button is clicked, createnewlistitem function is ran
+
+        function createNewListItem() { // creating a function to create new divs (which are essentially another line)
+            newParentDiv = document.createElement("div"); //creating a new div
+            newParentDiv.setAttribute("class", "listitem"); //attaching classes to the divs
+
+            newCheckBox = document.createElement("input"); //creating new checkbox to be appended inside parent div
+            newCheckBox.setAttribute("type", "checkbox"); // setting attribute of new checkbox to of type checkbox
+            newParentDiv.appendChild(newCheckBox); //appending the checkbox as a child to the parent div
+
+            newDivDesc = document.createElement("input"); //creating div for the list item description
+            newDivDesc.setAttribute("type", "text"); //setting class attribute
+            newParentDiv.appendChild(newDivDesc); //appending desc to parent div
+
+            document.querySelector(".main").appendChild(newParentDiv); // appending the final parent div to the main todo list
+        }
+
+        // document.querySelectorAll(".listitemdesc").addEventListener("click", editListItem);
+
+        // function editListItem() {
+        //     document.querySelectorAll(".listitemdesc").innerHTML =
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrity Height Game</title>
+
+    <style>
+        .main {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .celebrities {
+            display: flex;
+            gap: 100px;
+        }
+
+        .celebrities div div {
+            font-size: 30px;
+            padding: 5px;
+            /* border: 2px solid green; */
+        }
+
+        .title {
+            margin-top:
+                20px;
+        }
+
+        button {
+            margin-top: 50px;
+            font-size: 20px;
+        }
+
+        .correct {
+            display: none;
+            height: 5%;
+            width: 100%;
+            border: 3px solid black;
+            background-color: green;
+            opacity: 80%;
+            text-align: center;
+            font-size: 30px;
+            position: absolute;
+            top: 0
+        }
+
+        .incorrect {
+            display: none;
+            height: 5%;
+            width: 100%;
+            border: 3px solid black;
+            background-color: red;
+            opacity: 80%;
+            text-align: center;
+            font-size: 30px;
+            position: absolute;
+            top: 0;
+        }
+
+        img {
+            height: 500px;
+            width: 100%;
+        }
+
+        .celeb1name,
+        .celeb2name {
+            text-align: center;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="title">
+            <h1>Guess Who's Taller</h1>
+        </div>
+        <div class="correctcounter"></div>
+        <div class="celebrities">
+            <div class="celeb1">
+                <div class="celeb1name"></div>
+                <img src="../pics/rose.png">
+            </div>
+            <div class="celeb2">
+                <div class="celeb2name"></div>
+                <img src="../pics/lebron.png">
+            </div>
+        </div>
+
+        <button>Next Batch</button>
+        <div class="incorrect">
+            INCORRECT
+        </div>
+        <div class="correct">
+            CORRECT
+        </div>
+    </div>
+    <script>
+        const API_KEY = 'Su4JLIQNivO/wvaBohLd8A==yhZbmG6XnYrncjfl';
+        const API_KEY_HEADER = 'X-Api-Key';
+
+        us_celebrities = "";
+
+        function getCeleb() {
+            const myXML = new XMLHttpRequest();
+            myXML.open("GET", "https://api.api-ninjas.com/v1/celebrity?x-api-key=e4cVT8BzEFD562z74IXKZg==qttxkrNa0ZYegkU8&min_height=1.75");
+            myXML.addEventListener("load", function () {
+                us_celebrities = JSON.parse(myXML.responseText);
+                name();
+            })
+            myXML.send();
+        };
+
+        getCeleb(); // calling get request
+
+        function name() {
+            randomnumber1 = Math.ceil(Math.random() * us_celebrities.length); //getting random index for celeb1
+            randomnumber2 = Math.ceil(Math.random() * us_celebrities.length); //getting random index for celeb2
+
+            //tests
+            console.log("celeb 1: " + randomnumber1);
+            console.log("celeb 2: " + randomnumber2);
+            console.log("celeb 1 height: " + us_celebrities[randomnumber1].height);
+            console.log("celeb 2 height: " + us_celebrities[randomnumber2].height);
+            //tests
+
+            correctCounter = 0;
+            document.querySelector(".correctcounter").innerHTML = "Correct Counter: " + correctCounter;// initializing the counter
+
+            if (randomnumber1 !== randomnumber2 && us_celebrities[randomnumber1].height !== us_celebrities[randomnumber2].height) {
+                console.log("celeb 1: " + randomnumber1);
+                console.log("celeb 2: " + randomnumber2);
+                console.log("celeb 1 height: " + us_celebrities[randomnumber1].height);
+                console.log("celeb 2 height: " + us_celebrities[randomnumber2].height);
+                // if the randomly chosen celeb 1 is not the same as randomly chosen celeb 2
+                document.querySelector(".celeb1name").innerHTML = us_celebrities[randomnumber1].name; // create celeb 1 name
+                document.querySelector(".celeb1name").addEventListener("click", function () { // on click on celeb 1
+                    if (us_celebrities[randomnumber1].height > us_celebrities[randomnumber2].height) { // if celeb 1 height is larger than celeb 2
+                        document.querySelector(".correctcounter").innerHTML = ("Correct Counter: " + correctCounter++);// counter goes up by 1
+                        document.querySelector(".correct").style.display = 'block';
+                    }
+                    else if (document.querySelector(".correctcounter").innerHTML = ("Correct Counter: " + correctCounter)) {
+                        document.querySelector(".incorrect").style.display = 'block';
+
+                    }; //else counter stays the same
+                })
+
+                document.querySelector(".celeb2name").innerHTML = us_celebrities[randomnumber2].name;
+                document.querySelector(".celeb2name").addEventListener("click", function () {
+                    if (us_celebrities[randomnumber2].height > us_celebrities[randomnumber1].height) {
+                        document.querySelector(".correctcounter").innerHTML = ("Correct Counter: " + correctCounter++);
+                        document.querySelector(".correct").style.display = 'block';
+                    }
+                    else {
+                        document.querySelector(".incorrect").style.display = 'block';
+                    }
+                })
+            }
+            else {
+                name();
+            }
+        }
+
+        document.getElementsByTagName("button")[0].addEventListener("click", function () {
+            document.querySelector(".correct").style.display = 'none';
+            document.querySelector(".incorrect").style.display = 'none';
+            getCeleb();
+        })
+    </script>
+</body>
+
+</html>

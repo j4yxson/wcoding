@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // digital root
+        // function digitalRoot(n) {
+        //     sum = 0;
+        //     stringn = n.toString();
+        //     for (i = 0; i < stringn.length; i++) {
+        //         sum += parseInt(stringn[i]);
+        //     }
+        //     return digitalRootNext(sum);
+        // }
+
+        // function digitalRootNext(sum) {
+        //     newsum = 0;
+        //     stringn = sum.toString();
+        //     for (i = 0; i < stringn.length; i++) {
+        //         newsum += parseInt(stringn[i]);
+        //     }
+        //     return newsum;
+        // };
+
+        //duckduckgoose
+
+        // function duckDuckGoose(players, goose) {
+        //     actualGoose = goose % (players.length);
+        //     for (i = 1; i < players.length; i++) {
+        //         if (i == actualGoose && i !== 10) {
+        //             return players[i - 1].name;
+        //         }
+        //         else if (actualGoose == 0) {
+        //             return players[9].name;
+        //         }
+        //     }
+        // }
+
+        // duckDuckGoose([a, b, c, d], 1); // should be a
+        // duckDuckGoose([a, b, c, d], 5); // should be a
+        // duckDuckGoose([a, b, c, d], 4); // should be d
+
+        //sum of differences in array
+        // function sumOfDifferences(arr) { // creating function 
+        //     array1 = [];
+        //     arr.sort((a, b) => b - a); // sorting array from big to small
+        //     if (arr.length > 1) {
+        //         for (i = 0; i < arr.length; i++) { // ex array length = 3
+        //             if (arr[i + 1] !== arr[arr.length]) { // if array index at i+1 doesn't equal last number in array
+        //                 array1.push(arr[i] - arr[i + 1])//array at index i - array at index i+1
+        //             }
+
+        //         }
+        //         sum = array1.reduce((a, c) => a + c);
+        //         return sum;
+        //     }
+        //     if (arr.length < 2) return 0;
+        // }
+
+        //triangle area
+
+        var triangle = ('\n.\n. .\n. . .\n. . . .\n. . . . .\n. . . . . .\n. . . . . . .\n. . . . . . . .\n. . . . . . . . .\n');
+        var regex = /\\n/g;
+        var matches = triangle.match(regex);
+
+        console.log(matches);
+
+        // isogram  
+
+        // function isIsogram(string) {
+        //     samestring = string.toLowerCase();
+        //     if (hasNumber(string) == true) {
+        //         return false
+        //     }
+        //     else if (hasNumber(string) == false) {
+        //         for (i = 0; i < string.length; i++) {
+        //             samestring
+        //         }
+        //     }
+        // }
+
+        // function hasNumber(string) {
+        //     return /\d/.test(string);
+        // }
+
+
+        // function that capitalizes every other letter in the passed string
+
+        // function stringUpper(string) {
+        //     newString = string[0].toUpperCase();
+
+        //     for (i = 1; i < string.length; i++) {
+        //         if (i % 2 == 1) { // odds are uppercase
+        //             newString += string[i].toLowerCase();  // Corrected line: use += to append characters
+        //         }
+        //         else {
+        //             newString += string[i].toUpperCase();  // Corrected line: convert even-index characters to lowercase
+        //         }
+        //     }
+
+        //     return newString;
+        // }
+
+        //function that fixes closing tag of div tags by adding the /
+
+        // function fixDivs(string) {
+        //     found = string.match("<div>");
+        //     found.length;
+        //     numDivs = 0;
+        //     if (found.length % 2 == 0) {
+        //         numDivs = found.length / 2;
+        //     }
+        //     else {
+        //         numDivs = Math.floor(found.length / 2)
+        //     }
+        //     divPos = string.indexOf("div", (string.indexOf("div") + 1));
+        //     text = "/"
+        //     newString = string.slice(0, divPos) + text + string.slice(divPos);
+        //     return newString;
+        // }
+
+
+    </script>
+</body>
+
+</html>
