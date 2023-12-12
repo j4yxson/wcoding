@@ -9,24 +9,47 @@
 
 <body>
     <script>
-        // digital root
+        // // digital root
         // function digitalRoot(n) {
-        //     sum = 0;
-        //     stringn = n.toString();
-        //     for (i = 0; i < stringn.length; i++) {
-        //         sum += parseInt(stringn[i]);
+        //     let initSum = 0;
+        //     let stringn = n.toString();
+
+        //     for (let i = 0; i < stringn.length; i++) {
+        //         initSum += parseInt(stringn[i]);
         //     }
-        //     return digitalRootNext(sum);
+
+        //     let stringSum = initSum.toString();
+
+        //     if (stringSum.length > 1) {
+        //         let sum2 = 0;
+        //         for (let a = 0; a < stringSum.length; a++) {
+        //             sum2 += parseInt(stringSum[a]);
+        //         }
+
+        //         if (sum2.toString().length > 1) {
+        //             let sum3 = 0;
+        //             for (let c = 0; c < sum2.toString().length; c++) {
+        //                 sum3 += parseInt(sum2.toString()[c]);
+        //             }
+        //             return sum3;
+        //         } else {
+        //             return sum2;
+        //         }
+        //     } else {
+        //         return initSum;
+        //     }
         // }
 
-        // function digitalRootNext(sum) {
-        //     newsum = 0;
-        //     stringn = sum.toString();
-        //     for (i = 0; i < stringn.length; i++) {
-        //         newsum += parseInt(stringn[i]);
-        //     }
-        //     return newsum;
-        // };
+
+
+        // use this instead
+        // function digital_root(n) {
+        //     return (n - 1) % 9 + 1;
+        // }
+
+
+
+
 
         //duckduckgoose
 
@@ -47,7 +70,7 @@
         // duckDuckGoose([a, b, c, d], 4); // should be d
 
         //sum of differences in array
-        // function sumOfDifferences(arr) { // creating function 
+        // function sumOfDifferences(arr) { // creating function
         //     array1 = [];
         //     arr.sort((a, b) => b - a); // sorting array from big to small
         //     if (arr.length > 1) {
@@ -65,13 +88,13 @@
 
         //triangle area
 
-        var triangle = ('\n.\n. .\n. . .\n. . . .\n. . . . .\n. . . . . .\n. . . . . . .\n. . . . . . . .\n. . . . . . . . .\n');
-        var regex = /\\n/g;
-        var matches = triangle.match(regex);
+        // var triangle = ('\n.\n. .\n. . .\n. . . .\n. . . . .\n. . . . . .\n. . . . . . .\n. . . . . . . .\n. . . . . . . . .\n');
+        // var regex = /\\n/g;
+        // var matches = triangle.match(regex);
 
-        console.log(matches);
+        // console.log(matches);
 
-        // isogram  
+        // isogram
 
         // function isIsogram(string) {
         //     samestring = string.toLowerCase();
@@ -125,7 +148,263 @@
         //     return newString;
         // }
 
+        //remove lowest integer;
 
+        // Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+
+        // this code works
+        // function removeSmallest(array) {
+        //     sortedArray = array.toSorted((a, b) => a - b); // sorting the array
+        //     console.log("Returning sorted array: ", sortedArray);
+        //     smallestNumber = sortedArray[0]; // finding the smallest number
+        //     console.log("Returning the smallest number in the array: ", smallestNumber);
+        //     smallestNumberIndex = array.indexOf(smallestNumber); //finding the index of the smallest number
+        //     console.log("Returning the position of the smallest number in the original array", smallestNumberIndex);
+
+        //     array.splice(smallestNumberIndex, 1);
+        //     return array;
+        // }
+        // arr1 = [5, 3, 2, 1, 4];
+
+
+        // function removeSmallest(array) {
+        //     console.log("Original Array: ", array);
+        //     sortedArray = toSorted(array); // sorting the array
+        //     console.log("Returning sorted array: ", sortedArray);
+        //     smallestNumber = sortedArray[0]; // finding the smallest number
+        //     console.log("Returning the smallest number in the array: ", smallestNumber);
+        //     smallestNumberIndex = array.indexOf(smallestNumber); //finding the index of the smallest number
+        //     console.log("Returning the position of the smallest number in the original array", smallestNumberIndex);
+
+        //     slice1 = array.slice(0, smallestNumberIndex);
+        //     slice2 = array.slice(smallestNumberIndex + 1,);
+        //     console.log("First half slice: ", slice1);
+        //     console.log("Second half slice: ", slice2);
+
+        //     fullArray = slice1.concat(slice2);
+        //     console.log("Supposed to be full array: ", fullArray);
+
+        //     return fullArray;
+        // }
+
+
+        // function toSorted(array) {
+        //     newArray = [];
+        //     for (i = 0; i < array.length; i++) {
+        //         newArray.push(array[i]);
+        //     }
+        //     newArray.sort((a, b) => a - b);
+        //     return newArray;
+        // }
+
+        //this is the better way, just fucking use Math.min
+        // function removeSmallest(numbers) {
+        //     let indexOfMin = numbers.indexOf(Math.min(...numbers));
+        //     return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
+        // }
+
+        //username validation
+
+        // function validateUsr(username) {
+        //     res = /^[a-z\d_]{4,16}/.test(username);
+        //     console.log(res);
+        //     return res;
+        // }
+
+
+        // add the multiples
+        // function sumMul(n, m) {
+        //     let sum = 0;
+        //     if (n > m || n == m) return "INVALID";
+        //     multiple = Math.floor(m / n);
+
+        //     if (m % n == 0) {
+        //         for (i = 0; i < multiple; i++) {
+        //             sum += (i * n);
+        //         }
+        //         console.log(sum);
+        //     }
+
+        //     else if (m % n !== 0) {
+        //         for (a = 0; a <= multiple; a++) {
+        //             sum += (a * n);
+        //         }
+        //         console.log(sum);
+        //     }
+        // }
+
+        // sumMul(2, 9) ==> 2 + 4 + 6 + 8 = 20
+        // sumMul(3, 13) ==> 3 + 6 + 9 + 12 = 30
+        // sumMul(4, 123) ==> 4 + 8 + 12 + ... = 1860
+        // sumMul(4, -7) ==> "INVALID"
+
+        //means of an array
+
+        // function findAverage(nums) {
+        //     sum = 0;
+        //     countOfNums = nums.length;
+        //     console.log("number of numbers: ", countOfNums);
+        //     sum = nums.reduce((a, c) => a + c);
+        //     console.log("sum is: ", sum);
+        //     return sum / countOfNums;
+        // }
+
+        // arr1 = ([1, 3, 5, 7]);
+        // findAverage(arr1);
+
+        //chuck norris
+
+        // function ifChuckSaysSo() {
+        //     return false;
+        // }
+
+        //leap years
+
+        // function leapYear(year) {
+        //     if (year % 4 === 0) {
+        //         if (year % 100 === 0) {
+        //             if (year % 400 === 0) {
+        //                 return true;
+        //             } else {
+        //                 return false;
+        //             }
+        //         } else {
+        //             return true;
+        //         }
+        //     } else {
+        //         return false;
+        //     }
+        // }
+
+        //smallest value of an array
+
+
+        // function sortedArray(arr) {
+        //     emptyArray = [];
+        //     for (i = 0; i < arr.length; i++) {
+        //         emptyArray.push(arr[i]);
+        //     }
+        //     emptyArray.sort((a, b) => a - b);
+        //     lowestValue = emptyArray[0];
+        //     return emptyArray;
+        // };
+
+        // function min(arr, toReturn) {
+        //     console.log(arr);
+        //     sortedArray(arr);
+        //     indexOfLowestValue = arr.indexOf(lowestValue);
+        //     if (toReturn == 'value' || toReturn == 1) return lowestValue;
+        //     if (toReturn == 'index' || toReturn == 0) return indexOfLowestValue;
+        // };
+
+        // arr1 = [500, 250, 750, 5000, 1000, 230];
+        // min(arr1, 'value');
+
+
+        //sum of dupes
+
+        // function repeats(arr) {
+        //     emptyArray = [];
+        //     sortedArray = arr.sort((a, b) => a - b);
+        //     console.log("Sorted Array: ", sortedArray);
+        //     for (i = 0; i < arr.length; i++) {
+        //         if (arr[i] !== arr[i + 1] && arr[i] !== arr[i - 1]) {
+        //             emptyArray.push(arr[i]);
+        //         }
+        //     }
+        //     console.log("Dupe Array: ", emptyArray);
+        //     sum = emptyArray.reduce((a, c) => a + c);
+        //     console.log("Sum of Dupes: ", sum);
+        //     return sum;
+        // };
+
+        //3 Hoops Game
+        // array that has Blue Green or Red
+        // every basket inside each color hoop is 100 points
+        // if you get 3 in a row in a single color, bonus points depending on which basket but then will deactivate that basket 
+        // red = 500 bonus, blue = 300 bonus, green = 200 bonus
+        redCounter = 0;
+        blueCounter = 0;
+        greenCounter = 0;
+        consecutiveCounter = 0;
+        bonusCounter = 0;
+        dontCount = "";
+
+        function prizeCounter(array) {
+            for (i = 0; i < array.length; i++) {
+                if (dontCount == "") {
+                    if (array[i] == "R") redCounter++;
+                    if (array[i] == "B") blueCounter++;
+                    if (array[i] == "G") greenCounter++;
+                    if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
+                        consecutiveCounter = 1;
+                        if (consecutiveCounter == 1) {
+                            consecutiveCounter = 0;
+                            dontCount = array[i];
+                            if (dontCount == "R") bonusCounter += 500;
+                            if (dontCount == "B") bonusCounter += 300;
+                            if (dontCount == "G") bonusCounter += 200;
+                        }
+                    }
+                }
+                if (dontCount == "R") {
+                    if (array[i] == "R") redCounter += 0;
+                    if (array[i] == "B") blueCounter++;
+                    if (array[i] == "G") greenCounter++;
+                    if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
+                        consecutiveCounter = 1;
+                        if (consecutiveCounter == 1) {
+                            consecutiveCounter = 0;
+                            dontCount = array[i];
+                            if (dontCount == "R") bonusCounter += 500;
+                            if (dontCount == "B") bonusCounter += 300;
+                            if (dontCount == "G") bonusCounter += 200;
+                        }
+                    }
+                }
+                if (dontCount == "B") {
+                    if (array[i] == "R") redCounter++;
+                    if (array[i] == "B") blueCounter += 0;
+                    if (array[i] == "G") greenCounter++;
+                    if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
+                        consecutiveCounter = 1;
+                        if (consecutiveCounter == 1) {
+                            consecutiveCounter = 0;
+                            dontCount = array[i];
+                            if (dontCount == "R") bonusCounter += 500;
+                            if (dontCount == "B") bonusCounter += 300;
+                            if (dontCount == "G") bonusCounter += 200;
+                        }
+                    }
+                }
+                if (dontCount == "G") {
+                    if (array[i] == "R") redCounter++;
+                    if (array[i] == "B") blueCounter++;
+                    if (array[i] == "G") greenCounter += 0;
+                    if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
+                        consecutiveCounter = 1;
+                        if (consecutiveCounter == 1) {
+                            consecutiveCounter = 0;
+                            dontCount = array[i];
+                            if (dontCount == "R") bonusCounter += 500;
+                            if (dontCount == "B") bonusCounter += 300;
+                            if (dontCount == "G") bonusCounter += 200;
+                        }
+                    }
+                }
+            }
+            console.log(redCounter, blueCounter, greenCounter, bonusCounter);
+        }
+
+        //count every index and add +1 to each color tracker
+        // also have a separate tracker for consecutives
+        //if at any point the tracker hits 3, find what value caused it to hit 3, and stop counting for that color
+        //continue counting
+        // if at any point the tracker hits 3 again, reference the previous color at which it first hit 3 and then start counting whilst stopping counting for the new color that hit 3
+        //have a bonus counter 
+        // count up the final numbers in each counter?
+
+        testArray = ["b", "b", "g", "r", "b", "b", "b", "g", "b"] // => 800 points + 300 bonus == 1100 bonus. notice that last basket for blue DOES NOT count
     </script>
 </body>
 

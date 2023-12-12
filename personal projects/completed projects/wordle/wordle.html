@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <style>
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            font-weight: bold;
+            gap: 10px;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            z-index: -99;
+        }
+
+        .square {
+            border: 2px solid lightgray;
+            height: 60px;
+            width: 60px;
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Wordle</h1>
+    </div>
+
+    <script>
+
+        // Function to fetch random word asynchronously
+        const fetchRandomWord = async () => {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", "https://random-word-api.herokuapp.com/word?length=5");
+                xhr.addEventListener("load", function () {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        resolve(JSON.parse(xhr.responseText)[0]);
+                    } else {
+                        reject(`Request failed with status ${xhr.status}`);
+                    }
+                });
+                xhr.send();
+            });
+        };
+
+        // Wrap the code in an async function
+        (async function () {
+            // getting the random word from the API
+            try {
+                let random_word = await fetchRandomWord();
+                console.log(random_word);
+
+                // creating the 5 boxes in a row using JS
+                for (let a = 0; a < 6; a++) {
+                    let row = document.createElement("div"); // creating a row div
+                    row.className = "row"; // assigning row to the row class
+
+                    // now have to create each of the 5 boxes that will go in the row div
+                    for (let i = 0; i < 5; i++) { // creating 5 boxes in a horizontal row
+                        let box = document.createElement("input"); // creating the square div
+                        box.className = "square"; // assigning square to the box class
+                        box.title = random_word[i]; // assigning each letter to a square to be able to compare input values
+                        box.type = "text";
+                        box.maxLength = "1";
+                        row.appendChild(box); // appending each box to the row
+                    }
+                    document.querySelector(".main").appendChild(row); // appending the row to the main html
+
+                }
+                // Additional code that depends on random_word can be placed here
+
+            } catch (error) {
+                console.error(error);
+            }
+        })();
+
+
+        //document.querySelectorAll('[title=""]') = how to find which letter you're looking for
+
+        //function created to keep code clean
+
+        function changeBackground() {
+            for (i = 0; i < 5; i++) {
+                if (document.querySelectorAll('[title=""]') == a) {
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
