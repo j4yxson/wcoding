@@ -323,78 +323,78 @@
         // every basket inside each color hoop is 100 points
         // if you get 3 in a row in a single color, bonus points depending on which basket but then will deactivate that basket 
         // red = 500 bonus, blue = 300 bonus, green = 200 bonus
-        redCounter = 0;
-        blueCounter = 0;
-        greenCounter = 0;
-        consecutiveCounter = 0;
-        bonusCounter = 0;
-        dontCount = "";
+        // redCounter = 0;
+        // blueCounter = 0;
+        // greenCounter = 0;
+        // consecutiveCounter = 0;
+        // bonusCounter = 0;
+        // dontCount = "";
 
-        function prizeCounter(array) {
-            for (i = 0; i < array.length; i++) {
-                if (dontCount == "") {
-                    if (array[i] == "R") redCounter++;
-                    if (array[i] == "B") blueCounter++;
-                    if (array[i] == "G") greenCounter++;
-                    if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
-                        consecutiveCounter = 1;
-                        if (consecutiveCounter == 1) {
-                            consecutiveCounter = 0;
-                            dontCount = array[i];
-                            if (dontCount == "R") bonusCounter += 500;
-                            if (dontCount == "B") bonusCounter += 300;
-                            if (dontCount == "G") bonusCounter += 200;
-                        }
-                    }
-                }
-                if (dontCount == "R") {
-                    if (array[i] == "R") redCounter += 0;
-                    if (array[i] == "B") blueCounter++;
-                    if (array[i] == "G") greenCounter++;
-                    if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
-                        consecutiveCounter = 1;
-                        if (consecutiveCounter == 1) {
-                            consecutiveCounter = 0;
-                            dontCount = array[i];
-                            if (dontCount == "R") bonusCounter += 500;
-                            if (dontCount == "B") bonusCounter += 300;
-                            if (dontCount == "G") bonusCounter += 200;
-                        }
-                    }
-                }
-                if (dontCount == "B") {
-                    if (array[i] == "R") redCounter++;
-                    if (array[i] == "B") blueCounter += 0;
-                    if (array[i] == "G") greenCounter++;
-                    if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
-                        consecutiveCounter = 1;
-                        if (consecutiveCounter == 1) {
-                            consecutiveCounter = 0;
-                            dontCount = array[i];
-                            if (dontCount == "R") bonusCounter += 500;
-                            if (dontCount == "B") bonusCounter += 300;
-                            if (dontCount == "G") bonusCounter += 200;
-                        }
-                    }
-                }
-                if (dontCount == "G") {
-                    if (array[i] == "R") redCounter++;
-                    if (array[i] == "B") blueCounter++;
-                    if (array[i] == "G") greenCounter += 0;
-                    if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
-                        consecutiveCounter = 1;
-                        if (consecutiveCounter == 1) {
-                            consecutiveCounter = 0;
-                            dontCount = array[i];
-                            if (dontCount == "R") bonusCounter += 500;
-                            if (dontCount == "B") bonusCounter += 300;
-                            if (dontCount == "G") bonusCounter += 200;
-                        }
-                    }
-                }
-            }
-            console.log(redCounter, blueCounter, greenCounter, bonusCounter);
-        }
+        // function prizeCounter(array) {
+        //     for (i = 0; i < array.length; i++) {
+        //         if (dontCount == "") {
+        //             if (array[i] == "R") redCounter++;
+        //             if (array[i] == "B") blueCounter++;
+        //             if (array[i] == "G") greenCounter++;
+        //             if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
+        //                 consecutiveCounter = 1;
+        //                 if (consecutiveCounter == 1) {
+        //                     consecutiveCounter = 0;
+        //                     dontCount = array[i];
+        //                     if (dontCount == "R") bonusCounter += 500;
+        //                     if (dontCount == "B") bonusCounter += 300;
+        //                     if (dontCount == "G") bonusCounter += 200;
+        //                 }
+        //             }
+        //         }
+        //         if (dontCount == "R") {
+        //             if (array[i] == "R") redCounter += 0;
+        //             if (array[i] == "B") blueCounter++;
+        //             if (array[i] == "G") greenCounter++;
+        //             if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
+        //                 consecutiveCounter = 1;
+        //                 if (consecutiveCounter == 1) {
+        //                     consecutiveCounter = 0;
+        //                     dontCount = array[i];
+        //                     if (dontCount == "R") bonusCounter += 500;
+        //                     if (dontCount == "B") bonusCounter += 300;
+        //                     if (dontCount == "G") bonusCounter += 200;
+        //                 }
+        //             }
+        //         }
+        //         if (dontCount == "B") {
+        //             if (array[i] == "R") redCounter++;
+        //             if (array[i] == "B") blueCounter += 0;
+        //             if (array[i] == "G") greenCounter++;
+        //             if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
+        //                 consecutiveCounter = 1;
+        //                 if (consecutiveCounter == 1) {
+        //                     consecutiveCounter = 0;
+        //                     dontCount = array[i];
+        //                     if (dontCount == "R") bonusCounter += 500;
+        //                     if (dontCount == "B") bonusCounter += 300;
+        //                     if (dontCount == "G") bonusCounter += 200;
+        //                 }
+        //             }
+        //         }
+        //         if (dontCount == "G") {
+        //             if (array[i] == "R") redCounter++;
+        //             if (array[i] == "B") blueCounter++;
+        //             if (array[i] == "G") greenCounter += 0;
+        //             if (array[i] == array[i + 1] && array[i] == array[i + 2]) {
+        //                 consecutiveCounter = 1;
+        //                 if (consecutiveCounter == 1) {
+        //                     consecutiveCounter = 0;
+        //                     dontCount = array[i];
+        //                     if (dontCount == "R") bonusCounter += 500;
+        //                     if (dontCount == "B") bonusCounter += 300;
+        //                     if (dontCount == "G") bonusCounter += 200;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     console.log(redCounter, blueCounter, greenCounter, bonusCounter);
+        // }
 
         //count every index and add +1 to each color tracker
         // also have a separate tracker for consecutives
@@ -404,7 +404,36 @@
         //have a bonus counter 
         // count up the final numbers in each counter?
 
-        testArray = ["b", "b", "g", "r", "b", "b", "b", "g", "b"] // => 800 points + 300 bonus == 1100 bonus. notice that last basket for blue DOES NOT count
+        // testArray = ["b", "b", "g", "r", "b", "b", "b", "g", "b"] // => 800 points + 300 bonus == 1100 bonus. notice that last basket for blue DOES NOT count
+
+        //happy numbers
+
+        // a happy number is an integer that evaluates to 1;
+        // 100000 > x > 2 
+
+
+        function happyNumbers(x) {
+            firstSum = x * x; // multiplying the first number
+            array = [];
+            if (firstSum !== 1) {
+                reducer(firstSum);
+                if (sum !== 1) {
+                    reducer(sum);
+                }
+            }
+        };
+
+
+        function reducer(number) { //number is going to be a number
+            for (i = 0; i < number.toString().length; i++) {
+                array.push(parseInt(number.toString()[i])); // outputs an array that has each number at position i
+            }
+            nextNum = array.map(x => x * x); // squaring each position of the array
+            sum = nextNum.reduce((a, c) => a + c); // adds all the numbers in the array
+            console.log(sum);
+        };
+
+
     </script>
 </body>
 

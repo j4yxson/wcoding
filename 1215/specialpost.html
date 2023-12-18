@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Post</title>
+</head>
+
+<body>
+    <!-- <form id="first" method="post" action="nextpost.php">
+        <input type="text" name="fruit">
+        <input type="date" name="expiration">
+        <input type="submit" value="SEND">
+    </form> -->
+    <form id="second">
+        <input type="text" name="fruit">
+        <input type="date" name="expiration">
+        <input type="submit" value="SEND">
+    </form>
+    <div id="results"></div>
+    <script>
+        secondForm = document.getElementById("second");
+        secondForm.addEventListener("submit", function (evt) {
+            requestArr =
+                [
+                    'fruit=' + document.querySelector(["type=text"]).value,
+                    "expiration=" + document.querySelector(["type=date"]).value
+                ];
+
+            myAPI = new XMLHttpRequest();
+            myAPI.open("POST", "nextpost.php");
+            myAPI.addEventListener("load", function () {
+                document.getElementById("results").innerHTML = myAPI.responseText;
+            });
+            myAPI.send((new URLSearchParams(requestArr.join("&"))));
+            evt.preventDefault();
+        })
+    </script>
+</body>
+
+</html>
