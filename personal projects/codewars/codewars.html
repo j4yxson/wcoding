@@ -413,27 +413,10 @@
 
 
         function happyNumbers(x) {
-            firstSum = x * x; // multiplying the first number
-            array = [];
-            if (firstSum !== 1) {
-                reducer(firstSum);
-                if (sum !== 1) {
-                    reducer(sum);
-                }
+            if (x > 2 && x < 10000) {
+                return console.log(x.toString());
             }
-        };
-
-
-        function reducer(number) { //number is going to be a number
-            for (i = 0; i < number.toString().length; i++) {
-                array.push(parseInt(number.toString()[i])); // outputs an array that has each number at position i
-            }
-            nextNum = array.map(x => x * x); // squaring each position of the array
-            sum = nextNum.reduce((a, c) => a + c); // adds all the numbers in the array
-            console.log(sum);
-        };
-
-
+        }
     </script>
 </body>
 

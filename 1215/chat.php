@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="main">
         <h1>Chat</h1>
-        <form class="usern" action="chat.php" method="post">
+        <form>
             Username: <span><?= $username ?></span>
             <input type='text' name="username" autocomplete="off">
         </form>

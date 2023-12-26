@@ -1,0 +1,23 @@
+// Q1
+// SELECT * FROM `Phones` WHERE `owner` = 'Stacy';
+
+// Q2
+// SELECT * FROM `Phones` WHERE `weight` = 295;
+
+// Q3
+// SELECT * FROM `Phones` WHERE `brand` = 'NOKIA';
+
+// Q4
+// SELECT * FROM `Phones` WHERE `brand` = 'Nokia' OR `brand` = 'Apple'
+
+// Q5
+// SELECT * FROM `Phones` WHERE `price` = 115
+
+// Q6
+// SELECT * FROM `Phones` ORDER BY `weight` ASC;
+
+// Q7
+// SELECT * FROM `Phones` where `owner` = 'Victoria' LIMIT 5;
+
+// Q8
+// SELECT * FROM `Phones` where `owner` = 'Nina' AND `price` < 295 ORDER BY `price` DESC
