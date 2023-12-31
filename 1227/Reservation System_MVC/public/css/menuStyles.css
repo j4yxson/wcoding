@@ -1,0 +1,56 @@
+body {
+    background-color: firebrick;
+    margin: 0;
+    color: white;
+}
+
+.header {
+    height: 19vh;
+    width: 100vw;
+    border-bottom: 2px solid white;
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body img {
+    margin-top: 50px;
+    height: 400px;
+    width: 300px;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="display">
+        </div>
+        <div class="row1">
+            <div class="clear">C</div>
+            <div class="plusminus">+/-</div>
+            <div class="percentage">%</div>
+            <div class="divide">/</div>
+        </div>
+        <div class="row2">
+            <div class="seven">7</div>
+            <div class="eight">8</div>
+            <div class="nine">9</div>
+            <div class="multiply">X</div>
+        </div>
+        <div class="row3">
+            <div class="four">4</div>
+            <div class="five">5</div>
+            <div class="six">6</div>
+            <div class="subtract">-</div>
+        </div>
+        <div class="row4">
+            <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="add">+</div>
+        </div>
+        <div class="row5">
+            <div class="zero">0</div>
+            <div class="decimal">.</div>
+            <div class="equals">=</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    //display identifier
+
+    displayArea = document.querySelector(".display");
+    displayArea.innerHTML = "";
+    calcArray = [];
+
+    // percentage function
+
+    percentageButton = document.querySelector(".percentage");
+    percentageButton.addEventListener("click", function () {
+        result = parseFloat(displayArea.innerHTML);
+        displayArea.innerHTML = "";
+        displayArea.innerHTML = (result / 100) + "%";
+    });
+
+    // clear function
+    clearButton = document.querySelector(".clear");
+    clearButton.addEventListener("click", function () {
+        displayArea.innerHTML = "";
+        calcArray = [];
+    })
+
+    // 1 button
+    oneButton = document.querySelector(".one");
+    oneButton.addEventListener("click", function () {
+        displayArea.innerHTML = displayArea.innerHTML + 1;
+        calcArray.push(1);
+    })
+
+    // 2 button
+    twoButton = document.querySelector(".two");
+    twoButton.addEventListener("click", function () {
+        displayArea.innerHTML = displayArea.innerHTML + 2;
+        calcArray.push(2);
+    })
+    // 3 button
+    threeButton = document.querySelector(".three");
+    threeButton.addEventListener("click", function () {
+        displayArea.innerHTML = displayArea.innerHTML + 3;
+        calcArray.push(3);
+    })
+    // 4 button
+    fourButton = document.querySelector(".four");
+    fourButton.addEventListener("click", function () {
+        displayArea.innerHTML = displayArea.innerHTML + 4;
+        calcArray.push(4);
+    })
+    // 5 button
+    fiveButton = document.querySelector(".five");
+    fiveButton.addEventListener("click", function () {
+        displayArea.innerHTML = displayArea.innerHTML + 5;
+        calcArray.push(5);
+    })
+    // 6 button
+    sixButton = document.querySelector(".six");
+    sixButton.addEventListener("click", function () {
+        displayArea.innerHTML = displayArea.innerHTML + 6;
+        calcArray.push(6);
+    })
+    // 7 button
+    sevenButton = document.querySelector(".seven");
+    sevenButton.addEventListener("click", function () {
+        displayArea.innerHTML = displayArea.innerHTML + 7;
+        calcArray.push(7);
+    })
+    // 8 button
+    eightButton = document.querySelector(".eight");
+    eightButton.addEventListener("click", function () {
+        displayArea.innerHTML = displayArea.innerHTML + 8;
+        calcArray.push(8);
+    })
+    // 9 button
+    nineButton = document.querySelector(".nine");
+    nineButton.addEventListener("click", function () {
+        displayArea.innerHTML = displayArea.innerHTML + 9;
+        calcArray.push(9);
+    })
+    // 0 button
+    zeroButton = document.querySelector(".zero");
+    zeroButton.addEventListener("click", function () {
+        displayArea.innerHTML = displayArea.innerHTML + 0;
+        calcArray.push(0);
+    })
+    // . button
+    periodButton = document.querySelector(".decimal");
+    periodButton.addEventListener("click", function () {
+        displayArea.innerHTML = displayArea.innerHTML + ".";
+        calcArray.push(".");
+    })
+
+    //addition function
+    addButton = document.querySelector(".add");
+    addButton.addEventListener("click", function () {
+        displayArea.innerHTML = "";
+        calcArray.push("+");
+    })
+
+    //minus function
+    minusButton = document.querySelector(".subtract");
+    minusButton.addEventListener("click", function () {
+        displayArea.innerHTML = "";
+        calcArray.push("-");
+    })
+
+    //divide function
+    divideButton = document.querySelector(".divide");
+    divideButton.addEventListener("click", function () {
+        displayArea.innerHTML = "";
+        calcArray.push("/");
+    })
+
+    //multiply function
+    multiplyButton = document.querySelector(".multiply");
+    multiplyButton.addEventListener("click", function () {
+        displayArea.innerHTML = "";
+        calcArray.push("*");
+    })
+
+
+    // equals function
+    equalsButton = document.querySelector(".equals");
+    equalsButton.addEventListener("click", function () {
+        displayArea.innerHTML = "";
+        console.log("Array of calculation: " + calcArray);
+        finalCalc = eval(calcArray.join(""));
+        displayArea.innerHTML = finalCalc;
+        calcArray = [];
+        calcArray.push(finalCalc);
+        console.log("Current Number: " + calcArray);
+    })
+
+
+    //plus minus function
+    plusminusButton = document.querySelector(".plusminus");
+    plusminusButton.addEventListener("click", function () {
+        finalCalc = finalCalc * -1;
+        displayArea.innerHTML = finalCalc;
+        calcArray = [];
+        calcArray.push(finalCalc);
+        console.log(finalCalc);
+    })
+
+</script>

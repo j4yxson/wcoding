@@ -1,30 +1,7 @@
 <?php
-
-session_start();
-
-try {
-    $db = new PDO('mysql:host=localhost;dbname=businessdb;charset=utf8', 'root', '');
-} catch (Exception $e) {
-    die('Error : ' . $e->getMessage());
-}
-
-//check if username is posted and session username is not set
-if (isset($_POST['username'])) {
-    $_SESSION['username'] = $_POST['username'];
-};
-
-// if the session username is set, use it
-$username = "";
-if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username']; // assigning the session username to the variable "username"
-    // echo $username;
-} else {
-    // if username is not set in session
-    echo "Username not set";
-}
-
-
 $articleID = $_GET["article"];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +10,8 @@ $articleID = $_GET["article"];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php
-            $title = $db->prepare("SELECT * from article where id=$articleID");
-            $title->execute();
-            $response = $title->fetch(PDO::FETCH_ASSOC);
-            echo $response['title'];
-            ?></title>
-    <link rel="stylesheet" href="blog/article.css">
+    <title><?= $article['title'] ?></title>
+    <link rel="stylesheet" href="article.css">
 </head>
 
 <body>
@@ -51,14 +23,14 @@ $articleID = $_GET["article"];
             </div>
         </form>
         <div class="top">
-            <h1><a href="blog.php">Jason's Blog</a></h1>
+            <h1><a href="blogView.php">Jason's Blog</a></h1>
         </div>
         <hr>
         <div class="article">
-            <h2><?= $response['title'] ?></h2>
-            <h6><?= $response['tag'] ?></h6>
-            <h3><?= $response['author'] ?></h3>
-            <p><?= $response['content'] ?>
+            <h2><?= $article['title'] ?></h2>
+            <h6><?= $article['tag'] ?></h6>
+            <h3><?= $article['author'] ?></h3>
+            <p><?= $article['content'] ?>
             </p>
         </div>
     </div>
@@ -72,37 +44,21 @@ $articleID = $_GET["article"];
             <br>
         </div>
         <div class="commentsArea">
-            <?php
-            $comments = $db->prepare("SELECT * FROM comments where article_id=$articleID order by date_created desc limit 5");
-            $comments->execute();
-            $results = $comments->fetchAll(PDO::FETCH_ASSOC);
-
-            foreach ($results as $result) {
-                echo '<div class="comment">';
-                echo '<div class="author">' . $result['author'] . '</div>';
-                echo '<div class="commenttime">' . $result['date_created'] . '</div>';
-                echo '<br>';
-                echo '<div class="commentdesc">' . $result['comment'] . '</div>';
-                echo '<br>';
-                echo '</div>';
-            }
-            ?>
+            <?php foreach ($commentresults as $result) : ?>
+                <div class="comment">
+                    <div class="author"><?= $result['author'] ?></div>
+                    <div class="commenttime"><?= $result['date_created'] ?></div>
+                    <br>
+                    <div class="commentdesc"><?= $result['comment'] ?></div>
+                    <br>
+                </div>
+            <?php endforeach; ?>
         </div>
         <div class="commentsPages">
         </div>
     </div>
-
-    <?php
-    $totalcomments = $db->prepare("SELECT * FROM comments where  article_id = $articleID");
-    $totalcomments->execute();
-    $totalnumber = $totalcomments->rowCount();
-    echo "total number: " . $totalnumber . "<br>"; // THIS IS TOTAL NUMBER OF ROWS FOR THIS ARTICLE
-
-    if ($totalnumber > 5) {
-        $numPagesNeeded = (ceil($totalnumber / 5));
-    } else ($numPagesNeeded = 1);
-    echo "number of pages needed: " . $numPagesNeeded;
-
+    <?=
+    $numberofrows;
     ?>
 </body>
 
@@ -112,7 +68,7 @@ $articleID = $_GET["article"];
     commentSubmit = document.querySelector(".addComment");
     commentSubmit.addEventListener("submit", function(event) {
         event.preventDefault();
-        fetch('api.php', {
+        fetch('../api.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -129,6 +85,9 @@ $articleID = $_GET["article"];
     // have the pagination number be automatically created by # of comments/5
     // ex. 25 comments  = 5 pages
 
+
+
+
     paginationSection = document.querySelector('.commentsPages'); // identifying section to place the unordered list
     counter = 0; // initializing a counter to have out pages go up from 1-however
 
@@ -138,12 +97,13 @@ $articleID = $_GET["article"];
         searchLeft.innerHTML = "&lt";
         newUL.appendChild(searchLeft);
 
+
         //next section is identifying how many comments we have in our database, so we can create that many pages
 
         for (i = 0; i < <?= $numPagesNeeded ?>; i++) {
             newLI = document.createElement("li");
             newA = document.createElement("a");
-            newA.href = "article.php?article=" + <?= $articleID ?> + "&commentpage=" + (i + 1);
+            newA.href = "index.php?article=" + <?= $articleID ?> + "&commentpage=" + (i + 1);
             newA.textContent = (i + 1);
             newLI.appendChild(newA);
             newUL.appendChild(newLI);
@@ -160,7 +120,7 @@ $articleID = $_GET["article"];
     if (<?= $_GET['commentpage'] ?> !== 1) {
         document.querySelector('.commentsArea').innerHTML = "";
 
-        fetch('api2.php', {
+        fetch('../api2.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

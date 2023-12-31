@@ -1,0 +1,79 @@
+.main {
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: sans-serif;
+}
+
+h6,
+h3 {
+    margin: 0;
+}
+
+.top,
+.commentsPages {
+    display: flex;
+    justify-content: center;
+}
+
+hr {
+    width: 80vw;
+
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: cornflowerblue
+}
+
+.author {
+    font-weight: bold;
+}
+
+.addComment {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.commentInput {
+    height: 150px;
+    width: 500px;
+}
+
+button {
+    height: 50px;
+    width: 200px;
+}
+
+.login {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 5px;
+    right: 5px;
+}
+
+.commenttime {
+    margin: 0;
+    font-size: 10px;
+}
+
+.commentsArea {
+    border: 2px solid;
+}
+
+.commentsPages ul {
+    display: flex;
+    gap: 10px;
+    list-style-type: none;
+}
