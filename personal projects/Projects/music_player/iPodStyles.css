@@ -1,0 +1,125 @@
+body {
+    background-color: gray;
+    font-family: sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.ipod {
+    margin-top: 30px;
+    width: 400px;
+    height: 650px;
+    border: 3px solid darkgray;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: aliceblue;
+    gap: 57px
+}
+
+
+img {
+    height: 100%;
+    width: 30px;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 3px solid black;
+    border-radius: 10px;
+    height: 260px;
+    width: 90%;
+    position: relative;
+    top: 2.7%
+}
+
+#songinfo {
+    display: flex;
+    /* border: 2px solid; */
+    width: 83%;
+    gap: 10px;
+}
+
+.playbar {
+    height: 20px;
+    width: 300px;
+    border: 2px solid;
+    border-radius: 5px;
+    position: relative;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #007bff;
+    animation: fill 10s linear forwards;
+}
+
+.albumcover {
+    height: 100px;
+    width: 100px;
+}
+
+.wheel {
+    width: 100px;
+    height: 100px;
+    border: 80px solid lightgray;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    position: relative;
+}
+
+.forwardbackwards {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid blue; */
+    position: absolute;
+}
+
+.playpause {
+    display: flex;
+    margin: 0;
+    gap: 0px;
+}
+
+.menuplaypause {
+    width: 100px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    /* border: 2px solid green; */
+    justify-content: space-between;
+    position: absolute;
+}
+
+.bot {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90%;
+    /* border: 3px solid; */
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fill {
+    to {
+        width: 100%;
+    }
+}
